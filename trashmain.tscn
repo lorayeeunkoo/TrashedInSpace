@@ -40,4 +40,6 @@ cubic_interp = true
 loop = true
 lookahead = 4.0
 
+[connection signal="timeout" from="TrashTimer" to="." method="_on_TrashTimer_timeout"]
+
 
