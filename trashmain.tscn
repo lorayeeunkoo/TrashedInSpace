@@ -10,7 +10,7 @@ _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 0, -0.0640314, 0, 0, 0, 0, 1023.74, 0.134421, 0, 0, 0, 0, 1023.99, 599.847, 0, 0, 0, 0, -0.0568581, 599.918, 0, 0, 0, 0, 0, -0.0640314 )
 }
 
-[node name="Trashmain" type="Node"]
+[node name="Trashmain" type="Node" index="0"]
 
 script = ExtResource( 1 )
 Trash = ExtResource( 2 )
@@ -39,5 +39,7 @@ rotate = true
 cubic_interp = true
 loop = true
 lookahead = 4.0
+
+[connection signal="timeout" from="TrashTimer" to="." method="_on_TrashTimer_timeout"]
 
 
