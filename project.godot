@@ -11,8 +11,12 @@ config_version=3
 [application]
 
 config/name="TrashedInSpace"
-run/main_scene="res://assets/objects/Chain.tscn"
+run/main_scene="res://root.tscn"
 config/icon="res://icon.png"
+
+[physics]
+
+2d/default_gravity=0
 
 [rendering]
 
