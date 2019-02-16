@@ -43,6 +43,6 @@ node_b = NodePath("")
 bias = 0.9
 disable_collision = true
 softness = 16.0
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Transform", "Visibility" ]
 
 
