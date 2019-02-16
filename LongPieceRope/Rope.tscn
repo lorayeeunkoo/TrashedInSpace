@@ -12,7 +12,7 @@ radius = 10.0
 
 position = Vector2( 150, 150 )
 script = ExtResource( 1 )
-_sections_unfolded = [ "Material", "Transform", "Visibility" ]
+_sections_unfolded = [ "Material", "Visibility" ]
 pieces = 40
 
 [node name="Sprite" type="Sprite" parent="." index="0"]

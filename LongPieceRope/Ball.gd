@@ -1,3 +1,21 @@
+extends RigidBody2D
+
+var thrust = Vector2(0, 250)
+var torque = 20000
+
+func _integrate_forces(state):
+    if Input.is_action_pressed("ui_up"):
+        set_applied_force(thrust.rotated(rotation))
+    else:
+        set_applied_force(Vector2())
+    var rotation_dir = 0
+    if Input.is_action_pressed("ui_right"):
+        rotation_dir += 1
+    if Input.is_action_pressed("ui_left"):
+        rotation_dir -= 1
+    set_applied_torque(rotation_dir * torque)
+
+"""
 extends KinematicBody2D
 
 # class member variables go here, for example:
@@ -26,3 +44,4 @@ func _on_Control_mouse_entered():
 func _on_Control_mouse_exited():
 	over = false
 	modulate = Color(0xffffffff)
+"""
