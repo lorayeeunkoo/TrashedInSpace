@@ -7,15 +7,22 @@
 
 bake_interval = 5.0
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, -1.59666, 0.337066, 0, 0, 0, 0, 1023.74, 0.134421, 0, 0, 0, 0, 929.293, 573.155, 0, 0, 0, 0, 63.0769, 502.683, 0, 0, 0, 0, 68.9496, 156.197 )
+"points": PoolVector2Array( 0, 0, 0, 0, 0, -0.0640314, 0, 0, 0, 0, 1023.74, 0.134421, 0, 0, 0, 0, 1023.99, 599.847, 0, 0, 0, 0, -0.0568581, 599.918, 0, 0, 0, 0, 0, -0.0640314 )
 }
 
-[node name="Trashmain" type="Node" index="0"]
+[node name="Trashmain" type="Node"]
 
 script = ExtResource( 1 )
 Trash = ExtResource( 2 )
 
-[node name="TrashPath" type="Path2D" parent="." index="0"]
+[node name="TrashTimer" type="Timer" parent="." index="0"]
+
+process_mode = 1
+wait_time = 0.5
+one_shot = false
+autostart = false
+
+[node name="TrashPath" type="Path2D" parent="." index="1"]
 
 self_modulate = Color( 0.5, 0.6, 1, 0.7 )
 position = Vector2( 0.000746727, 0.033967 )
@@ -23,8 +30,8 @@ curve = SubResource( 1 )
 
 [node name="TrashSpawnLocation" type="PathFollow2D" parent="TrashPath" index="0"]
 
-position = Vector2( -1.59666, 0.337066 )
-rotation = -0.000197635
+position = Vector2( 0, -0.0640314 )
+rotation = 0.000193849
 offset = 0.0
 h_offset = 0.0
 v_offset = 0.0
@@ -32,14 +39,5 @@ rotate = true
 cubic_interp = true
 loop = true
 lookahead = 4.0
-
-[node name="TrashTimer" type="Timer" parent="." index="1"]
-
-process_mode = 1
-wait_time = 0.4
-one_shot = false
-autostart = false
-
-[connection signal="timeout" from="TrashTimer" to="." method="_on_TrashTimer_timeout"]
 
 
