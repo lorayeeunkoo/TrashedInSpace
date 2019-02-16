@@ -6,6 +6,8 @@
 
 [node name="ship" parent="." index="0" instance=ExtResource( 1 )]
 
+position = Vector2( -981.907, -22.3161 )
+
 [node name="solid rock" type="RigidBody2D" parent="." index="1"]
 
 position = Vector2( 757.777, 360.007 )
