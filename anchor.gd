@@ -39,11 +39,11 @@ func _physics_process(delta):
 	var torque = 0
 	
 	if Input.is_action_pressed('ui_up'):
-		force = Vector2(0,-40)
-#		force = force.rotated(small_ship.rot)
+		force = Vector2(0,-180)
+		force = force.rotated(small_ship.global_rotation)
 	if Input.is_action_pressed('ui_down'):
-		force = Vector2(0,40)
-#		force = force.rotated(small_ship.rot)
+		force = Vector2(0,180)
+		force = force.rotated(small_ship.global_rotation)
 	if Input.is_action_pressed('ui_left'):
 		torque -= 5
 	if Input.is_action_pressed('ui_right'):
@@ -52,9 +52,9 @@ func _physics_process(delta):
 
 #	applied_torque = torque
 #	applied_force = force
-	last_link.apply_impulse(Vector2(0,0),force)
+	small_ship.apply_impulse(Vector2(0,0),force)
 	
-	last_link.apply_impulse(Vector2(20,0),Vector2(0,torque))
-	last_link.apply_impulse(Vector2(-20,0),Vector2(0,-torque))
+	small_ship.apply_impulse(Vector2(4,0),Vector2(0,torque))
+	small_ship.apply_impulse(Vector2(-4,0),Vector2(0,-torque))
 	
 
