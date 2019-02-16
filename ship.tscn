@@ -1,0 +1,114 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/scripts/RigidBody2D.gd" type="Script" id=1]
+[ext_resource path="res://interior.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/sprites/ship.png" type="Texture" id=3]
+
+[node name="ship" type="RigidBody2D"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+mode = 0
+mass = 1.0
+friction = 1.0
+bounce = 0.0
+gravity_scale = 0.0
+custom_integrator = false
+continuous_cd = 0
+contacts_reported = 0
+contact_monitor = false
+sleeping = false
+can_sleep = true
+linear_velocity = Vector2( 0, 0 )
+linear_damp = -1.0
+angular_velocity = 0.0
+angular_damp = -1.0
+script = ExtResource( 1 )
+_sections_unfolded = [ "Collision" ]
+
+[node name="Camera2D" type="Camera2D" parent="." index="0"]
+
+position = Vector2( -230, 90 )
+anchor_mode = 1
+rotating = true
+current = false
+zoom = Vector2( 5, 5 )
+limit_left = -10000000
+limit_top = -10000000
+limit_right = 10000000
+limit_bottom = 10000000
+limit_smoothed = false
+drag_margin_h_enabled = false
+drag_margin_v_enabled = false
+smoothing_enabled = true
+smoothing_speed = 5.0
+offset_v = 0.0
+offset_h = 0.0
+drag_margin_left = 0.2
+drag_margin_top = 0.2
+drag_margin_right = 0.2
+drag_margin_bottom = 0.2
+editor_draw_screen = true
+editor_draw_limits = false
+editor_draw_drag_margin = false
+_sections_unfolded = [ "Smoothing" ]
+
+[node name="ViewportContainer" type="ViewportContainer" parent="." index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -1464.0
+margin_top = -702.0
+margin_right = 1476.0
+margin_bottom = 889.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+stretch = true
+stretch_shrink = 1
+
+[node name="Viewport" type="Viewport" parent="ViewportContainer" index="0"]
+
+arvr = false
+size = Vector2( 2940, 1591 )
+own_world = true
+world = null
+transparent_bg = false
+msaa = 0
+hdr = true
+disable_3d = false
+usage = 2
+debug_draw = 0
+render_target_v_flip = false
+render_target_clear_mode = 0
+render_target_update_mode = 3
+audio_listener_enable_2d = false
+audio_listener_enable_3d = false
+physics_object_picking = false
+gui_disable_input = false
+gui_snap_controls_to_pixels = true
+shadow_atlas_size = 0
+shadow_atlas_quad_0 = 2
+shadow_atlas_quad_1 = 2
+shadow_atlas_quad_2 = 3
+shadow_atlas_quad_3 = 4
+
+[node name="interior" parent="ViewportContainer/Viewport" index="0" instance=ExtResource( 2 )]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="2"]
+
+build_mode = 0
+polygon = PoolVector2Array( -734.193, -631.495, -990.511, -252.144, -988.461, -51.1901, -1332.95, -67.5945, -1345.26, 352.767, -1177.11, 348.666, -1179.16, 758.776, -1119.7, 822.342, -955.652, 814.14, -898.237, 766.978, -890.035, 664.45, 617.117, 656.248, 654.026, 715.714, 717.593, 588.58, 816.02, 508.609, 1084.64, 518.862, 1070.29, 313.807, 756.554, 291.251, 635.572, 244.089, 651.976, 30.8318, 924.699, 2.12411, 1047.73, -254.194, 883.688, -492.057, 674.532, -625.343 )
+
+[node name="helper alignment sprite" type="Sprite" parent="." index="3"]
+
+visible = false
+texture = ExtResource( 3 )
+
+

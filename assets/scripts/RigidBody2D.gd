@@ -11,6 +11,7 @@ func _ready():
 	camera = $Camera2D
 	camera.make_current()
 	
+	
 func _physics_process(delta):
 	var force = Vector2()
 	var torque = 0
@@ -18,10 +19,13 @@ func _physics_process(delta):
 	if Input.is_action_pressed('ui_up'):
 		force = Vector2(10,0)
 		force = force.rotated(rotation)
+	if Input.is_action_pressed('ui_down'):
+		force = Vector2(-10,0)
+		force = force.rotated(rotation)
 	if Input.is_action_pressed('ui_left'):
-		torque += 100
-	if Input.is_action_pressed('ui_right'):
 		torque -= 100
+	if Input.is_action_pressed('ui_right'):
+		torque += 100
 
 #	applied_torque = torque
 #	applied_force = force
