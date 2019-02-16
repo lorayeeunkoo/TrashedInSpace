@@ -10,7 +10,7 @@ _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, -1.59666, 0.337066, 0, 0, 0, 0, 1023.74, 0.134421, 0, 0, 0, 0, 929.293, 573.155, 0, 0, 0, 0, 63.0769, 502.683, 0, 0, 0, 0, 68.9496, 156.197 )
 }
 
-[node name="Trashmain" type="Node"]
+[node name="Trashmain" type="Node" index="0"]
 
 script = ExtResource( 1 )
 Trash = ExtResource( 2 )
