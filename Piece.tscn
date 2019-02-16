@@ -34,6 +34,7 @@ _sections_unfolded = [ "Angular", "Applied Forces", "Collision", "Linear", "Tran
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
 
 shape = SubResource( 1 )
+_sections_unfolded = [ "Transform" ]
 
 [node name="Joint" type="PinJoint2D" parent="CollisionShape2D" index="0"]
 
