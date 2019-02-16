@@ -1,6 +1,6 @@
 extends RigidBody2D
 
-var thrust = Vector2(0, 1000)
+var thrust = Vector2(0, 500)
 var torque = 20000
 
 func _integrate_forces(state):

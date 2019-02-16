@@ -14,7 +14,7 @@ light_mask = 4
 position = Vector2( 150, 150 )
 script = ExtResource( 1 )
 _sections_unfolded = [ "Material", "Transform", "Visibility" ]
-pieces = 40
+pieces = 80
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 

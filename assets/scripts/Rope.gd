@@ -7,7 +7,7 @@ extends Node2D
 var PIECE = preload("res://Piece.tscn")
 var BALL = preload("res://Ball.tscn")
 
-export (int) var pieces = 40
+export (int) var pieces = 80
 
 func _ready():
 	# Called when the node is added to the scene for the first time.
