@@ -1,0 +1,58 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/sprites/ship.png" type="Texture" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 129.029, 123.209 )
+
+[node name="interior" type="StaticBody2D" index="0"]
+
+position = Vector2( 1465.42, 701.068 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="Sprite" type="Sprite" parent="." index="0"]
+
+texture = ExtResource( 1 )
+
+[node name="RigidBody2D" type="RigidBody2D" parent="." index="1"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+mode = 0
+mass = 1.0
+friction = 1.0
+bounce = 0.0
+gravity_scale = 1.0
+custom_integrator = false
+continuous_cd = 0
+contacts_reported = 0
+contact_monitor = false
+sleeping = false
+can_sleep = true
+linear_velocity = Vector2( 0, 0 )
+linear_damp = -1.0
+angular_velocity = 0.0
+angular_damp = -1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D" index="0"]
+
+position = Vector2( -84.845, -318.394 )
+rotation = 4.39823
+shape = SubResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="2"]
+
+build_mode = 0
+polygon = PoolVector2Array( -1478.02, 561.794, -1225.2, 843.383, -890.059, 868.081, 289.501, 932.647, 922.72, 935.437, 1281.32, 108.311, 877.498, -739.083, -776.054, -754.156, -897.508, -601.114, 577.537, -574.783, 607.684, -547.651, 612.206, -413.497, 559.449, -246.183, 476.545, -145.191, 437.354, -42.6918, 434.34, 41.7193, -937.34, 41.7193, -860.465, 80.9101, 223.312, 86.9395, 579.044, 77.8954, 580.466, 426.182, 502.273, 542.656, 468.064, 603.744, -861.973, 602.45, -857.451, 83.9248, -937.34, 38.7046, -935.832, -250.705, -722.21, -597.152, -898.243, -600.378, -1299.81, -315.647 )
+
+
