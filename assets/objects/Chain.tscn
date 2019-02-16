@@ -26,14 +26,14 @@ custom_solver_bias = 0.0
 radius = 10.0
 height = 20.0
 
-[node name="Chain" type="Node2D" index="0"]
+[node name="Chain" type="Node2D"]
 
+editor/display_folded = true
 position = Vector2( 200, 200 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Anchor" type="StaticBody2D" parent="." index="0"]
 
-position = Vector2( 0, 1 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -83,7 +83,7 @@ linear_velocity = Vector2( 0, 0 )
 linear_damp = -1.0
 angular_velocity = 0.0
 angular_damp = -1.0
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Anchor/PinJoint2D/Link 1" index="0"]
 
