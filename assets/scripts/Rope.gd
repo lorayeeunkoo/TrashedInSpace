@@ -4,8 +4,8 @@ extends Node2D
 # var a = 2
 # var b = "textvar"
 
-var PIECE = preload("res://LongPieceRope/Piece.tscn")
-var BALL = preload("res://LongPieceRope/Ball.tscn")
+var PIECE = preload("res://Piece.tscn")
+var BALL = preload("res://Ball.tscn")
 
 export (int) var pieces = 40
 

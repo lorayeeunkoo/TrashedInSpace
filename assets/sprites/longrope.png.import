@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/longrope.png-b1594e5bf1003c9d6b7f008d6eeb64e9.stex"
+path="res://.import/longrope.png-0d2863602f9c44ea1531792a9b84f60a.stex"
 
 [deps]
 
-source_file="res://longrope.png"
-dest_files=[ "res://.import/longrope.png-b1594e5bf1003c9d6b7f008d6eeb64e9.stex" ]
+source_file="res://assets/sprites/longrope.png"
+dest_files=[ "res://.import/longrope.png-0d2863602f9c44ea1531792a9b84f60a.stex" ]
 
 [params]
 
