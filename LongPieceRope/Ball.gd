@@ -1,20 +1,28 @@
 extends RigidBody2D
 
-var thrust = Vector2(0, 250)
+var thrust = Vector2(0, 1000)
 var torque = 20000
 
 func _integrate_forces(state):
-    if Input.is_action_pressed("ui_up"):
-        set_applied_force(thrust.rotated(rotation))
+    if Input.is_action_pressed("ui_up"): 
+	    set_applied_force(thrust.rotated(rotation- PI))
+    elif Input.is_action_pressed("ui_down"): 
+	    set_applied_force(thrust.rotated(rotation))
+    elif Input.is_action_pressed("ui_right"):
+	    set_applied_force(thrust.rotated(rotation - PI/2))
+    elif Input.is_action_pressed("ui_left"):
+	    set_applied_force(thrust.rotated(rotation - 3*PI/2))
     else:
         set_applied_force(Vector2())
-    var rotation_dir = 0
+    """
+	var rotation_dir = 0
     if Input.is_action_pressed("ui_right"):
-        rotation_dir += 1
+        rotation_dir += 0.1
     if Input.is_action_pressed("ui_left"):
-        rotation_dir -= 1
+        rotation_dir -= 0.1
     set_applied_torque(rotation_dir * torque)
-
+	"""
+	
 """
 extends KinematicBody2D
 
