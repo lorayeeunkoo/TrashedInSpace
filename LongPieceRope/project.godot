@@ -11,8 +11,16 @@ config_version=3
 [application]
 
 config/name="TrashedInSpace"
-run/main_scene="res://LongPieceRope/Rope.tscn"
+<<<<<<< HEAD
+run/main_scene="res://Anchor.tscn"
+=======
+run/main_scene="res://root.tscn"
+>>>>>>> dev
 config/icon="res://icon.png"
+
+[physics]
+
+2d/default_gravity=0
 
 [rendering]
 

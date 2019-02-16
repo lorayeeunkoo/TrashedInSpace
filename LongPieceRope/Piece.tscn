@@ -13,7 +13,7 @@ height = 6.0
 position = Vector2( 0, 9 )
 input_pickable = false
 collision_layer = 1
-collision_mask = 1
+collision_mask = 2
 mode = 0
 mass = 0.1
 friction = 1.0
@@ -41,7 +41,7 @@ node_a = NodePath("")
 node_b = NodePath("")
 bias = 0.9
 disable_collision = true
-softness = 16.0
+softness = 0.0
 _sections_unfolded = [ "Transform" ]
 
 [node name="Sprite" type="Sprite" parent="CollisionShape2D/Joint" index="0"]

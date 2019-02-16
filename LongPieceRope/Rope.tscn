@@ -10,9 +10,10 @@ radius = 10.0
 
 [node name="Rope" type="Node2D" index="0"]
 
+light_mask = 4
 position = Vector2( 150, 150 )
 script = ExtResource( 1 )
-_sections_unfolded = [ "Material", "Visibility" ]
+_sections_unfolded = [ "Material", "Transform", "Visibility" ]
 pieces = 40
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
@@ -42,7 +43,7 @@ node_a = NodePath("")
 node_b = NodePath("")
 bias = 0.9
 disable_collision = true
-softness = 16.0
+softness = 0.0
 _sections_unfolded = [ "Transform", "Visibility" ]
 
 
