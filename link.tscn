@@ -35,9 +35,9 @@ shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="." index="1"]
 
-position = Vector2( -3.81977, -1.13491 )
+position = Vector2( -2.54661, -1.15543 )
 rotation = -1.58065
-scale = Vector2( 1.08897, 1.08296 )
+scale = Vector2( 1.34225, 1.08296 )
 texture = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
