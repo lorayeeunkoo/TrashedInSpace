@@ -6,9 +6,11 @@ const SMALL_SHIP_SCENE = preload("res://small_ship.tscn")
 # class member variables go here, for example:
 # var a = 2
 # var b = "textvar"
+var ship
 var last_link
 var small_ship
 func _ready():
+	ship = get_parent().get_parent()
 	# Called when the node is added to the scene for the first time.
 	# Initialization here
 	var parent = self
@@ -37,17 +39,21 @@ func _ready():
 func _physics_process(delta):
 	var force = Vector2()
 	var torque = 0
-	
-	if Input.is_action_pressed('ui_up'):
-		force = Vector2(0,-180)
-		force = force.rotated(small_ship.global_rotation)
-	if Input.is_action_pressed('ui_down'):
-		force = Vector2(0,180)
-		force = force.rotated(small_ship.global_rotation)
-	if Input.is_action_pressed('ui_left'):
-		torque -= 5
-	if Input.is_action_pressed('ui_right'):
-		torque += 5
+	if ship.fuel >= 0.05:
+		if Input.is_action_pressed('ui_up'):
+			force = Vector2(0,-180)
+			force = force.rotated(small_ship.global_rotation)
+			ship.fuel -= 0.05
+		if Input.is_action_pressed('ui_down'):
+			force = Vector2(0,180)
+			force = force.rotated(small_ship.global_rotation)
+			ship.fuel -= 0.05
+		if Input.is_action_pressed('ui_left'):
+			torque -= 5
+			ship.fuel -= 0.05
+		if Input.is_action_pressed('ui_right'):
+			torque += 5
+			ship.fuel -= 0.05
 
 #	applied_torque = torque
 #	applied_force = force

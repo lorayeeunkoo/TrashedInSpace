@@ -1,10 +1,11 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://assets/scripts/trash_spawn_control.gd" type="Script" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
 [ext_resource path="res://ship.tscn" type="PackedScene" id=3]
+[ext_resource path="res://HUD.tscn" type="PackedScene" id=4]
 
-[node name="root" type="Node"]
+[node name="root" type="Node" index="0"]
 
 [node name="trash_spawn_control" type="Node" parent="." index="0"]
 
@@ -50,5 +51,7 @@ __meta__ = {
 
 build_mode = 0
 polygon = PoolVector2Array( -258.5, 78.5, -296.5, -222.5, 266.5, -287.5, 439.5, -175.5, 424.5, 87.5, 216.5, 139.5, -90.5, 197.5, -175.5, 125.5, -83.5, 64.5, 151.5, 45.5, 301.5, -30.5, 240.5, -179.5, 62.5, -197.5, -68.5, -180.5, -141.5, -107.5, -197.5, -9.5, -204.5, 101.5 )
+
+[node name="HUD" parent="." index="4" instance=ExtResource( 4 )]
 
 

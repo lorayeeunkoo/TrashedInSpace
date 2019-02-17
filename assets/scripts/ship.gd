@@ -6,7 +6,10 @@ var camera
 var tether
 var smallShip
 
+var fuel
+
 func _ready():
+	fuel = 100
 	# Called when the node is added to the scene for the first time.
 	# Initialization here
 	camera = $Camera2D
@@ -28,17 +31,21 @@ func _ready():
 func _physics_process(delta):
 	var force = Vector2()
 	var torque = 0
-
-	if Input.is_action_pressed('ui_up'):
-		force = Vector2(500,0)
-		force = force.rotated(rotation)
-	if Input.is_action_pressed('ui_down'):
-		force = Vector2(-500,0)
-		force = force.rotated(rotation)
-	if Input.is_action_pressed('ui_left'):
-		torque -= 5000
-	if Input.is_action_pressed('ui_right'):
-		torque += 5000
+	if fuel >= 0.1:
+		if Input.is_action_pressed('ui_up'):
+			force = Vector2(500,0)
+			force = force.rotated(rotation)
+			fuel -= 0.1
+		if Input.is_action_pressed('ui_down'):
+			force = Vector2(-500,0)
+			force = force.rotated(rotation)
+			fuel -= 0.1
+		if Input.is_action_pressed('ui_left'):
+			torque -= 5000
+			fuel -= 0.1
+		if Input.is_action_pressed('ui_right'):
+			torque += 5000
+			fuel -= 0.1
 
 #	applied_torque = torque
 #	applied_force = force
@@ -66,5 +73,4 @@ func _process(delta):
 	var mapped = reMap(mag, 5000, 1000, 20, 7)
 	var camZoom = Vector2(mapped, mapped)
 	camera.zoom = camZoom
-
 
