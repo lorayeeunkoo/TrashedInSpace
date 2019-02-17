@@ -3,6 +3,8 @@ extends RigidBody2D
 # class member variables go here, for example:
 # var a = 2
 # var b = "textvar"
+const TETHER_SCENE = preload("res://ropeTest.tscn")
+
 var camera
 
 func _ready():
@@ -11,16 +13,20 @@ func _ready():
 	camera = $Camera2D
 	camera.make_current()
 	
+	var child = TETHER_SCENE.instance()
+	child.position.x = position.x - 1050
+	child.position.y = position.y + 850
+	self.add_child(child)
 	
 func _physics_process(delta):
 	var force = Vector2()
 	var torque = 0
 	
 	if Input.is_action_pressed('ui_up'):
-		force = Vector2(10,0)
+		force = Vector2(100,0)
 		force = force.rotated(rotation)
 	if Input.is_action_pressed('ui_down'):
-		force = Vector2(-10,0)
+		force = Vector2(-100,0)
 		force = force.rotated(rotation)
 	if Input.is_action_pressed('ui_left'):
 		torque -= 100
@@ -31,8 +37,8 @@ func _physics_process(delta):
 #	applied_force = force
 	apply_impulse(Vector2(0,0),force)
 	
-	apply_impulse(Vector2(10,0),Vector2(0,torque))
-	apply_impulse(Vector2(-10,0),Vector2(0,-torque))
+	apply_impulse(Vector2(100,0),Vector2(0,torque))
+	apply_impulse(Vector2(-100,0),Vector2(0,-torque))
 	
 #func _integrate_forces(state):
 #	print(state)	
