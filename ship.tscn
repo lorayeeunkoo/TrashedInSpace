@@ -74,10 +74,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = -1464.0
-margin_top = -702.0
-margin_right = 1476.0
-margin_bottom = 889.0
+margin_left = -1465.0
+margin_top = -1297.0
+margin_right = 1475.0
+margin_bottom = 1502.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
@@ -86,11 +86,14 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 stretch = true
 stretch_shrink = 1
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Viewport" type="Viewport" parent="ViewportContainer" index="0"]
 
 arvr = false
-size = Vector2( 2940, 1591 )
+size = Vector2( 2940, 2799 )
 own_world = true
 world = null
 transparent_bg = true

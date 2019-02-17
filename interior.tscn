@@ -9,7 +9,7 @@ extents = Vector2( 129.029, 123.209 )
 
 [node name="interior" type="StaticBody2D"]
 
-position = Vector2( 1465.42, 701.068 )
+position = Vector2( 1465.42, 1291.07 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
