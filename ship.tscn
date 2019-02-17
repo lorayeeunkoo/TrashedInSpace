@@ -1,9 +1,15 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://assets/scripts/ship.gd" type="Script" id=1]
 [ext_resource path="res://assets/sprites/ship.png" type="Texture" id=2]
 [ext_resource path="res://interior.tscn" type="PackedScene" id=3]
-[ext_resource path="res://assets/scripts/Kill_Zone.gd" type="Script" id=4]
+[ext_resource path="res://assets/scripts/TrashLoader.gd" type="Script" id=4]
+[ext_resource path="res://assets/scripts/Kill_Zone.gd" type="Script" id=5]
+
+[sub_resource type="CircleShape2D" id=3]
+
+custom_solver_bias = 0.0
+radius = 649.831
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -15,7 +21,7 @@ extents = Vector2( 200, 19504.8 )
 custom_solver_bias = 0.0
 extents = Vector2( 19504.8, 280.75 )
 
-[node name="ship" type="RigidBody2D"]
+[node name="ship" type="RigidBody2D" index="0"]
 
 position = Vector2( 0, -1 )
 input_pickable = false
@@ -97,6 +103,7 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 stretch = true
 stretch_shrink = 1
+_sections_unfolded = [ "Focus", "Hint", "Margin", "Mouse", "Rect" ]
 __meta__ = {
 "_edit_group_": true
 }
@@ -129,8 +136,9 @@ shadow_atlas_quad_3 = 4
 
 [node name="interior" parent="ViewportContainer/Viewport" index="0" instance=ExtResource( 3 )]
 
-[node name="KinematicBody2D" type="Area2D" parent="." index="4"]
+[node name="TrashLoader" type="Area2D" parent="." index="4"]
 
+position = Vector2( 1465.42, 975.07 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -140,28 +148,44 @@ audio_bus_override = false
 audio_bus_name = "Master"
 script = ExtResource( 4 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D" index="0"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TrashLoader" index="0"]
+
+shape = SubResource( 3 )
+
+[node name="KillBox" type="Area2D" parent="." index="5"]
+
+editor/display_folded = true
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KillBox" index="0"]
 
 position = Vector2( -19446, 0 )
 shape = SubResource( 1 )
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="KinematicBody2D" index="1"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="KillBox" index="1"]
 
 position = Vector2( 19607.2, 0 )
 shape = SubResource( 1 )
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="KinematicBody2D" index="2"]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="KillBox" index="2"]
 
 position = Vector2( 0, -19224 )
 shape = SubResource( 2 )
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="KinematicBody2D" index="3"]
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="KillBox" index="3"]
 
 position = Vector2( -148.67, 18827.2 )
 shape = SubResource( 2 )
 
 [connection signal="body_entered" from="." to="." method="_on_ship_body_entered"]
 
-[connection signal="body_entered" from="KinematicBody2D" to="KinematicBody2D" method="_on_KinematicBody2D_body_entered"]
+[connection signal="body_entered" from="KillBox" to="KillBox" method="_on_KinematicBody2D_body_entered"]
 
 

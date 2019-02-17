@@ -21,5 +21,4 @@ func _physics_process(delta):
 				var size = $CollisionShape2D.shape.radius / Vector2().distance_to(delta_pos)
 				normal_delta_pos = normal_delta_pos * size
 				body.apply_impulse(Vector2(), normal_delta_pos)
-		print(col.size())
 		

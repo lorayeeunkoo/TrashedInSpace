@@ -1,0 +1,62 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/scripts/Trash.gd" type="Script" id=1]
+[ext_resource path="res://assets/sprites/Begrabber.png" type="Texture" id=2]
+
+[sub_resource type="CapsuleShape2D" id=1]
+
+custom_solver_bias = 0.0
+radius = 4.24395
+height = 12.6724
+
+[node name="Trash" type="RigidBody2D"]
+
+position = Vector2( 196.478, 196.478 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+mode = 0
+mass = 0.1
+friction = 0.0
+bounce = 0.0
+gravity_scale = 0.0
+custom_integrator = false
+continuous_cd = 0
+contacts_reported = 10000
+contact_monitor = true
+sleeping = false
+can_sleep = false
+linear_velocity = Vector2( 0, 0 )
+linear_damp = -0.54
+angular_velocity = 0.0
+angular_damp = -1.0
+applied_torque = 20.0
+script = ExtResource( 1 )
+_sections_unfolded = [ "Applied Forces", "Collision", "Linear", "Transform" ]
+MIN_SPEED = 300
+MAX_SPEED = 500
+
+[node name="Visibility" type="VisibilityNotifier2D" parent="." index="0"]
+
+position = Vector2( -122.085, -130.26 )
+scale = Vector2( 6.15001, 5.94999 )
+rect = Rect2( -10, -10, 20, 20 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
+
+position = Vector2( -121.163, -97.0111 )
+scale = Vector2( 16.7569, 6.54028 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="." index="2"]
+
+position = Vector2( -118.163, -95.437 )
+scale = Vector2( 0.0443408, 0.0514782 )
+texture = ExtResource( 2 )
+
+[connection signal="body_entered" from="." to="." method="_on_Trash_body_entered"]
+
+[connection signal="screen_exited" from="Visibility" to="." method="_on_Visibility_screen_exited"]
+
+

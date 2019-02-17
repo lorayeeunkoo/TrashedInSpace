@@ -6,7 +6,7 @@
 [ext_resource path="res://assets/sounds/in_game.wav" type="AudioStream" id=4]
 [ext_resource path="res://HUD.tscn" type="PackedScene" id=5]
 
-[node name="root" type="Node" index="0"]
+[node name="root" type="Node"]
 
 [node name="trash_spawn_control" type="Node" parent="." index="0"]
 
@@ -32,7 +32,6 @@ bus = "Master"
 
 [node name="solid rock" type="RigidBody2D" parent="." index="3"]
 
-editor/display_folded = true
 position = Vector2( 757.777, 360.007 )
 input_pickable = false
 collision_layer = 1
