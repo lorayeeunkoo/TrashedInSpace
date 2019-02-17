@@ -6,13 +6,16 @@ var motion = Vector2()
 func _physics_process(delta):
 	motion.y += 10
 	if Input.is_action_pressed("ui_page_down"):
-		motion.x = 100
-		
+		motion.x += 60
+		motion.x = min(motion.x,400)
+	
 	elif Input.is_action_pressed("ui_page_up"):
-		motion.x = -100
+		motion.x -= 60
+		motion.x = max(motion.x,-400)
+	elif motion.x * motion.x < .50:
+		motion.x *= .8
 	else:
 		motion.x = 0
-	
 	if is_on_floor():
 		if(Input.is_action_just_pressed("ui_accept")):
 			motion.y = -400

@@ -1,18 +1,7 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://assets/sprites/ship.png" type="Texture" id=1]
-[ext_resource path="res://KinematicBody2D.gd" type="Script" id=2]
-[ext_resource path="res://icon.png" type="Texture" id=3]
-
-[sub_resource type="RectangleShape2D" id=1]
-
-custom_solver_bias = 0.0
-extents = Vector2( 129.029, 123.209 )
-
-[sub_resource type="RectangleShape2D" id=2]
-
-custom_solver_bias = 0.0
-extents = Vector2( 38.58, 29.068 )
+[ext_resource path="res://Player.tscn" type="PackedScene" id=2]
 
 [node name="interior" type="StaticBody2D" index="0"]
 
@@ -32,60 +21,14 @@ scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="RigidBody2D" type="RigidBody2D" parent="." index="1"]
-
-editor/display_folded = true
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-mode = 0
-mass = 1.0
-friction = 1.0
-bounce = 0.0
-gravity_scale = 1.0
-custom_integrator = false
-continuous_cd = 0
-contacts_reported = 0
-contact_monitor = false
-sleeping = false
-can_sleep = true
-linear_velocity = Vector2( 0, 0 )
-linear_damp = -1.0
-angular_velocity = 0.0
-angular_damp = -1.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D" index="0"]
-
-position = Vector2( -84.845, -318.394 )
-rotation = 4.39823
-shape = SubResource( 1 )
-_sections_unfolded = [ "Transform", "Visibility" ]
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="2"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="1"]
 
 position = Vector2( -0.867676, -157.999 )
 build_mode = 0
 polygon = PoolVector2Array( -1386.09, -55.1527, -1406.69, 374.123, -1231.55, 820.57, -941.985, 1112.48, -622.604, 1531.32, 1210.15, 1578.53, 1241.14, 1358.47, 1145.06, 1231.4, 936.226, 954.374, 587.11, 1372.25, 533.513, 1433.49, -565.067, 1431.64, -612.96, 1380.9, -611.609, 782.581, 590.625, 781.107, 588.341, 1368.56, 922.72, 935.437, 1228.74, 1324.38, 1281.32, 108.311, 1241.08, -312.718, 1237.32, -837.293, 625.957, -1056.54, -664.234, -1027.03, -1144.89, -917.403, -918.278, -565.902, -773.619, -567.723, -747.262, -611.02, 650.055, -607.327, 672.215, -588.86, 670.316, -157.749, 694.265, -155.753, 698.256, 2.57526, 647.035, 49.7492, -945.342, 46.0244, -875.763, 85.1767, 637.21, 86.9559, 637.473, 735.889, -815.547, 741.456, -876.786, 661.66, -878.225, 91.3323, -952.66, 45.8818, -956.257, -275.061, -774.143, -566.997, -917.495, -564.472, -1147.03, -909.264, -1168.66, -352.512 )
 
-[node name="KinematicBody2D" type="KinematicBody2D" parent="." index="3"]
+[node name="KinematicBody2D" parent="." index="2" instance=ExtResource( 2 )]
 
-position = Vector2( -729.42, -477.068 )
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-collision/safe_margin = 0.08
-script = ExtResource( 2 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="Sprite" parent="KinematicBody2D" index="0"]
-
-texture = ExtResource( 3 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D" index="1"]
-
-shape = SubResource( 2 )
-one_way_collision = true
+position = Vector2( -249.42, -267.07 )
 
 
