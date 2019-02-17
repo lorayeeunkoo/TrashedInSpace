@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://assets/scripts/trash_spawn_control.gd" type="Script" id=1]
-[ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://assets/sprites/icon.png" type="Texture" id=2]
 [ext_resource path="res://ship.tscn" type="PackedScene" id=3]
-[ext_resource path="res://HUD.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/sounds/in_game.wav" type="AudioStream" id=4]
+[ext_resource path="res://HUD.tscn" type="PackedScene" id=5]
 
 [node name="root" type="Node" index="0"]
 
@@ -19,6 +20,15 @@ texture = ExtResource( 2 )
 [node name="ship" parent="." index="2" instance=ExtResource( 3 )]
 
 position = Vector2( -981.907, -22.3161 )
+
+[node name="music" type="AudioStreamPlayer" parent="ship" index="5"]
+
+stream = ExtResource( 4 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
 
 [node name="solid rock" type="RigidBody2D" parent="." index="3"]
 
@@ -52,6 +62,6 @@ __meta__ = {
 build_mode = 0
 polygon = PoolVector2Array( -258.5, 78.5, -296.5, -222.5, 266.5, -287.5, 439.5, -175.5, 424.5, 87.5, 216.5, 139.5, -90.5, 197.5, -175.5, 125.5, -83.5, 64.5, 151.5, 45.5, 301.5, -30.5, 240.5, -179.5, 62.5, -197.5, -68.5, -180.5, -141.5, -107.5, -197.5, -9.5, -204.5, 101.5 )
 
-[node name="HUD" parent="." index="4" instance=ExtResource( 4 )]
+[node name="HUD" parent="." index="4" instance=ExtResource( 5 )]
 
 

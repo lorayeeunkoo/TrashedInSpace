@@ -22,7 +22,7 @@ func _ready():
 	add_child(tether)
 	smallShip = tether.get_child(0).small_ship
 	add_to_group("Ship")
-#
+	$music.play()
 #func getRootChild(n, root):
 #	var child = root.get_child(1)
 #	if n > 0:
