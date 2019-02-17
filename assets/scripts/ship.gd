@@ -69,3 +69,7 @@ func _process(delta):
 	camera.zoom = camZoom
 
 
+
+
+func _on_ship_body_entered(body):
+	pass # replace with function body
