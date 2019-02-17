@@ -87,5 +87,7 @@ func _process(delta):
 		get_tree().change_scene("res://Endingscreen.tscn")
 
 func _on_ship_body_entered(body):
+	fuel-=1
+	print("fuel deducted")
 	pass # replace with function body
 	
