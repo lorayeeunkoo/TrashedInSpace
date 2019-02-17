@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://assets/scripts/ship.gd" type="Script" id=1]
 [ext_resource path="res://assets/sprites/ship.png" type="Texture" id=2]
 [ext_resource path="res://interior.tscn" type="PackedScene" id=3]
+[ext_resource path="res://RocketBack.tscn" type="PackedScene" id=4]
 
 [node name="ship" type="RigidBody2D" index="0"]
 
@@ -86,6 +87,7 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 stretch = true
 stretch_shrink = 1
+_sections_unfolded = [ "Focus", "Hint", "Margin", "Mouse", "Rect" ]
 __meta__ = {
 "_edit_group_": true
 }
@@ -117,6 +119,11 @@ shadow_atlas_quad_2 = 3
 shadow_atlas_quad_3 = 4
 
 [node name="interior" parent="ViewportContainer/Viewport" index="0" instance=ExtResource( 3 )]
+
+[node name="Particles2D" parent="." index="4" instance=ExtResource( 4 )]
+
+position = Vector2( -1690.25, 20.4906 )
+scale = Vector2( 1.10058, 1.82166 )
 
 [connection signal="body_entered" from="." to="." method="_on_ship_body_entered"]
 

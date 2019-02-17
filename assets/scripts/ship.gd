@@ -15,7 +15,7 @@ func _ready():
 	# Initialization here
 	camera = $Camera2D
 	camera.make_current()
-	
+	add_to_group("Ship")
 	tether = TETHER_SCENE.instance()
 	tether.position.x = position.x - 150
 	tether.position.y = position.y + 800
@@ -41,9 +41,11 @@ func _physics_process(delta):
 		force = force.rotated(rotation)
 	if Input.is_action_pressed('ui_left'):
 		torque -= 100
+
 	if Input.is_action_pressed('ui_right'):
 		torque += 100
 
+	
 #	applied_torque = torque
 #	applied_force = force
 	apply_impulse(Vector2(0,0),force)
