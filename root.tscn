@@ -20,6 +20,7 @@ position = Vector2( -981.907, -22.3161 )
 
 [node name="solid rock" type="RigidBody2D" parent="." index="3"]
 
+editor/display_folded = true
 position = Vector2( 757.777, 360.007 )
 input_pickable = false
 collision_layer = 1
