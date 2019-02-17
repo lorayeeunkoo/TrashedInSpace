@@ -13,7 +13,3 @@ func _ready():
 #	# Called every frame. Delta is time since last frame.
 #	# Update game logic here.
 #	pass
-
-#spawn (whatever calls this will choose random selected location)
-
-#if ship only collides with space station, sprite.tint to shadow out at end

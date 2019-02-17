@@ -7,18 +7,14 @@
 custom_solver_bias = 0.0
 radius = 10.0
 
-<<<<<<< HEAD
-[node name="Node" type="Node"]
-=======
 [node name="Node" type="Node2D"]
->>>>>>> dev2
 
 [node name="Camera2D" type="Camera2D" parent="." index="0"]
 
 position = Vector2( 0, 70 )
 anchor_mode = 1
 rotating = false
-current = false
+current = true
 zoom = Vector2( 2, 2 )
 limit_left = -10000000
 limit_top = -10000000
