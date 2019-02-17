@@ -1,0 +1,91 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://assets/scripts/Trash.gd" type="Script" id=1]
+[ext_resource path="res://assets/sprites/trash/r1.jpg" type="Texture" id=2]
+[ext_resource path="res://assets/sprites/trash/r2.jpg" type="Texture" id=3]
+[ext_resource path="res://assets/sprites/trash/r3.jpg" type="Texture" id=4]
+[ext_resource path="res://assets/sprites/trash/r4.jpg" type="Texture" id=5]
+[ext_resource path="res://assets/sprites/trash/u1.jpg" type="Texture" id=6]
+[ext_resource path="res://assets/sprites/trash/u2.jpg" type="Texture" id=7]
+[ext_resource path="res://assets/sprites/trash/u3.jpg" type="Texture" id=8]
+[ext_resource path="res://assets/sprites/trash/u4.jpg" type="Texture" id=9]
+
+[sub_resource type="SpriteFrames" id=1]
+
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "right",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ) ],
+"loop": true,
+"name": "up",
+"speed": 4.99
+} ]
+
+[sub_resource type="CapsuleShape2D" id=2]
+
+custom_solver_bias = 0.0
+radius = 4.24395
+height = 12.6724
+
+[node name="Trash" type="RigidBody2D"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+mode = 0
+mass = 0.2
+friction = 1.0
+bounce = 1.0
+gravity_scale = 0.0
+custom_integrator = false
+continuous_cd = 0
+contacts_reported = 10000
+contact_monitor = true
+sleeping = false
+can_sleep = false
+linear_velocity = Vector2( 0, 0 )
+linear_damp = -0.54
+angular_velocity = 0.0
+angular_damp = -1.0
+applied_torque = 20.0
+script = ExtResource( 1 )
+_sections_unfolded = [ "Applied Forces", "Collision", "Linear", "Transform" ]
+__meta__ = {
+"_edit_group_": true
+}
+MIN_SPEED = 300
+MAX_SPEED = 500
+
+[node name="Visibility" type="VisibilityNotifier2D" parent="." index="0"]
+
+scale = Vector2( 6.15001, 5.94999 )
+rect = Rect2( -10, -10, 20, 20 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="." index="1"]
+
+visible = false
+position = Vector2( 0, -9.53674e-007 )
+scale = Vector2( 0.1, 0.1 )
+frames = SubResource( 1 )
+animation = "up"
+frame = 3
+playing = true
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="2"]
+
+position = Vector2( 0.209383, 1.53839 )
+scale = Vector2( 4.07515, 2.28633 )
+shape = SubResource( 2 )
+
+[node name="Node2D" type="Node2D" parent="." index="3"]
+
+[connection signal="body_entered" from="." to="." method="_on_Trash_body_entered"]
+
+[connection signal="screen_exited" from="Visibility" to="." method="_on_Visibility_screen_exited"]
+
+
