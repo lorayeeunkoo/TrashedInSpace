@@ -36,7 +36,7 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 light_mask = 3
 texture = ExtResource( 3 )
-_sections_unfolded = [ "Visibility" ]
+_sections_unfolded = [ "Animation", "Material", "Offset", "Transform", "Visibility", "Z Index" ]
 
 [connection signal="body_entered" from="." to="CollisionShape2D" method="_on_spaceStation_body_entered"]
 

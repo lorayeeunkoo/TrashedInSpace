@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://assets/scripts/ship.gd" type="Script" id=1]
 [ext_resource path="res://assets/sprites/ship.png" type="Texture" id=2]
 [ext_resource path="res://interior.tscn" type="PackedScene" id=3]
+[ext_resource path="res://icon.png" type="Texture" id=4]
 
 [node name="ship" type="RigidBody2D" index="0"]
 
@@ -117,6 +118,18 @@ shadow_atlas_quad_2 = 3
 shadow_atlas_quad_3 = 4
 
 [node name="interior" parent="ViewportContainer/Viewport" index="0" instance=ExtResource( 3 )]
+
+[node name="pointRigidBody" type="Node2D" parent="." index="4"]
+
+position = Vector2( 1900, 1900 )
+_sections_unfolded = [ "Collision", "Pickable", "Transform" ]
+
+[node name="Sprite" type="Sprite" parent="pointRigidBody" index="0"]
+
+rotation = -3.14159
+scale = Vector2( 11.6736, -3.36104 )
+texture = ExtResource( 4 )
+_sections_unfolded = [ "Offset", "Transform" ]
 
 [connection signal="body_entered" from="." to="." method="_on_ship_body_entered"]
 
