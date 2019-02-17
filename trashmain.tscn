@@ -22,7 +22,14 @@ wait_time = 0.3
 one_shot = false
 autostart = false
 
-[node name="TrashPath" type="Path2D" parent="." index="1"]
+[node name="EndTimer" type="Timer" parent="." index="1"]
+
+process_mode = 1
+wait_time = 20.0
+one_shot = true
+autostart = true
+
+[node name="TrashPath" type="Path2D" parent="." index="2"]
 
 self_modulate = Color( 0.5, 0.6, 1, 0.7 )
 position = Vector2( 0.000746727, 0.033967 )
@@ -39,6 +46,10 @@ rotate = true
 cubic_interp = true
 loop = true
 lookahead = 4.0
+
+[node name="StartPosition" type="Position2D" parent="." index="3"]
+
+position = Vector2( -995.489, -10.147 )
 
 [connection signal="timeout" from="TrashTimer" to="." method="_on_TrashTimer_timeout"]
 
