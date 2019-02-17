@@ -14,8 +14,8 @@ func _ready():
 	var parent = self
 	for i in range(40):
 		var child = LINK_SCENE.instance()
-		child.position.x = position.x
-		child.position.y = position.y + 50
+		child.position.x = position.x + 1*15
+		child.position.y = position.y
 		parent.add_child(child)
 		
 		var link = PinJoint2D.new()
