@@ -6,7 +6,7 @@
 [ext_resource path="res://RocketBack.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Cannon.tscn" type="PackedScene" id=5]
 
-[node name="ship" type="RigidBody2D" index="0"]
+[node name="ship" type="RigidBody2D"]
 
 position = Vector2( 0, -1 )
 input_pickable = false

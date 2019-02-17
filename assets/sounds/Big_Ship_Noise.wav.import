@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Big_Ship_Noise.wav-dc97886cb782b97c4b87046a03040efc.sample"
+
+[deps]
+
+source_file="res://assets/sounds/Big_Ship_Noise.wav"
+dest_files=[ "res://.import/Big_Ship_Noise.wav-dc97886cb782b97c4b87046a03040efc.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
