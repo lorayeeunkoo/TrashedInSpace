@@ -1,20 +1,11 @@
 extends RigidBody2D
-# class member variables go here, for example:
-# var a = 2
-# var b = "textvar"
-const MAGNET_AREA_SCENE = preload("res://magnetArea.tscn")
-
-#var rot = 0
 var area
 
 func _ready():
 	# Called when the node is added to the scene for the first time.
 	# Initialization here
-	area = MAGNET_AREA_SCENE.instance()
-	var parent = self
+	area = $"MagnetForce"
 	area.hide()
-	
-	parent.add_child(area)
 
 
 func _process(delta):
