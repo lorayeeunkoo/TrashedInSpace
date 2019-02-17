@@ -7,9 +7,7 @@ const MAGNET_AREA_SCENE = preload("res://magnetArea.tscn")
 #var rot = 0
 var area
 
-
 func _ready():
-	
 	# Called when the node is added to the scene for the first time.
 	# Initialization here
 	area = MAGNET_AREA_SCENE.instance()

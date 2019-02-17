@@ -5,6 +5,8 @@ const TETHER_SCENE = preload("res://ropeTest.tscn")
 var camera
 var tether
 var smallShip
+var player
+var playerSmall
 
 var fuel
 
@@ -21,10 +23,10 @@ func _ready():
 	tether.position.y = position.y + 800
 	add_child(tether)
 	smallShip = tether.get_child(0).small_ship
+	player = -1 # make player = none
+	playerSmall = -1
 	add_to_group("Ship")
-#
 #func getRootChild(n, root):
-#	var child = root.get_child(1)
 #	if n > 0:
 #		return getRootChild(n - 1, child)
 #	else:
@@ -34,20 +36,36 @@ func _physics_process(delta):
 	var force = Vector2()
 	var torque = 0
 	if fuel >= 0.1:
-		if Input.is_action_pressed('key_up'):
-			force = Vector2(500,0)
-			force = force.rotated(rotation)
-			fuel -= 0.1
-		if Input.is_action_pressed('key_down'):
-			force = Vector2(-500,0)
-			force = force.rotated(rotation)
-			fuel -= 0.1
-		if Input.is_action_pressed('key_left'):
-			torque -= 5000
-			fuel -= 0.1
-		if Input.is_action_pressed('key_right'):
-			torque += 5000
-			fuel -= 0.1
+		if(player==0):
+			if Input.is_action_pressed('key_up'):
+				force = Vector2(500,0)
+				force = force.rotated(rotation)
+				fuel -= 0.1
+			if Input.is_action_pressed('key_down'):
+				force = Vector2(-500,0)
+				force = force.rotated(rotation)
+				fuel -= 0.1
+			if Input.is_action_pressed('key_left'):
+				torque -= 5000
+				fuel -= 0.1
+			if Input.is_action_pressed('key_right'):
+				torque += 5000
+				fuel -= 0.1
+		elif(player==1):
+			if Input.is_action_pressed('ui_up'):
+				force = Vector2(500,0)
+				force = force.rotated(rotation)
+				fuel -= 0.1
+			if Input.is_action_pressed('ui_down'):
+				force = Vector2(-500,0)
+				force = force.rotated(rotation)
+				fuel -= 0.1
+			if Input.is_action_pressed('ui_left'):
+				torque -= 5000
+				fuel -= 0.1
+			if Input.is_action_pressed('ui_right'):
+				torque += 5000
+				fuel -= 0.1
 
 	
 #	applied_torque = torque
