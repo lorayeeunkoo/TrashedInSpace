@@ -67,7 +67,7 @@ func _process(delta):
 	var camY = 5
 	var delta_position = global_position - smallShip.global_position
 	var mag = delta_position.length()
-	var mapped = reMap(mag, 5000, 1000, 16, 7)
+	var mapped = reMap(mag, 5000, 1000, 25, 7)
 	print(mapped)
 	var camZoom = Vector2(mapped, mapped)
 	camera.zoom = camZoom
