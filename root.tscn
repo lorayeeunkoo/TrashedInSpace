@@ -8,6 +8,8 @@
 
 [node name="Trashmain" parent="." index="0" instance=ExtResource( 1 )]
 
+_sections_unfolded = [ "Pause" ]
+
 [node name="Sprite" type="Sprite" parent="." index="1"]
 
 visible = false
@@ -39,6 +41,7 @@ linear_velocity = Vector2( 0, 0 )
 linear_damp = -1.0
 angular_velocity = 0.0
 angular_damp = -1.0
+_sections_unfolded = [ "Pause" ]
 __meta__ = {
 "_edit_group_": true
 }
