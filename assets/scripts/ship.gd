@@ -83,6 +83,9 @@ func _process(delta):
 	else:
 		if (camera.offset_v <= 60):
 			camera.offset_v += 3
+	if fuel == 0:
+		get_tree().change_scene("res://Endingscreen.tscn")
 
 func _on_ship_body_entered(body):
 	pass # replace with function body
+	
