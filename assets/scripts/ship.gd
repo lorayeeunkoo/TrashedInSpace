@@ -28,6 +28,7 @@ func _ready():
 	player = -1 # make player = none
 	playerSmall = -1
 	add_to_group("Ship")
+	$music.play()
 #func getRootChild(n, root):
 #	if n > 0:
 #		return getRootChild(n - 1, child)

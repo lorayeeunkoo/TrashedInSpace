@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://assets/scripts/Endingscreen.gd" type="Script" id=1]
-[ext_resource path="res://trash.png" type="Texture" id=2]
+[ext_resource path="res://assets/sprites/trash.png" type="Texture" id=2]
 [ext_resource path="res://Xolonium-Regular.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://assets/sounds/Confirmation_menu.wav" type="AudioStream" id=4]
 
 [sub_resource type="DynamicFont" id=1]
 
@@ -12,7 +13,7 @@ use_filter = false
 font_data = ExtResource( 3 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[node name="Endingscreen" type="CanvasLayer" index="0"]
+[node name="Endingscreen" type="CanvasLayer"]
 
 layer = 1
 offset = Vector2( 0, 0 )
@@ -37,7 +38,7 @@ texture = ExtResource( 2 )
 expand = true
 stretch_mode = 6
 
-[node name="Button" type="Button" parent="." index="1"]
+[node name="EndButton" type="Button" parent="." index="1"]
 
 anchor_left = 0.5
 anchor_top = 1.0
@@ -63,6 +64,15 @@ flat = false
 align = 1
 _sections_unfolded = [ "custom_fonts" ]
 
-[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+[node name="button_click" type="AudioStreamPlayer" parent="EndButton" index="0"]
+
+stream = ExtResource( 4 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[connection signal="pressed" from="EndButton" to="." method="_on_Button_pressed"]
 
 
