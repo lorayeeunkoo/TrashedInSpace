@@ -15,12 +15,11 @@ func _physics_process(delta):
 	if(Input.is_action_pressed('ui_accept')):
 		var col = get_overlapping_bodies()
 		for body in col:
-			var delta_pos = global_position - body.global_position
-			var normal_delta_pos = delta_pos.normalized()
-			var size = $CollisionShape2D.shape.radius / Vector2().distance_to(delta_pos)
-			normal_delta_pos = normal_delta_pos * size
-			body.apply_impulse(Vector2(), normal_delta_pos)
-			print(delta_pos)
+			if body.is_in_group('enemy'):
+				var delta_pos = global_position - body.global_position
+				var normal_delta_pos = delta_pos.normalized()
+				var size = $CollisionShape2D.shape.radius / Vector2().distance_to(delta_pos)
+				normal_delta_pos = normal_delta_pos * size
+				body.apply_impulse(Vector2(), normal_delta_pos)
+		print(col.size())
 		
-	
-	

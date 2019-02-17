@@ -18,12 +18,12 @@ func _ready():
 	#Initialize/Create the rigidbody objects to be dummy trash
 	var parent = self
 	
-	for i in range (numTrash):
-		#Set each garbage in different locations each time
-		var garbage = DUMMY_GARBAGE_SCENE.instance()
-		garbage.position.x = position.x + i * 40
-		garbage.position.y = position.y
-		parent.add_child(garbage)
+#	for i in range (numTrash):
+#		#Set each garbage in different locations each time
+#		var garbage = DUMMY_GARBAGE_SCENE.instance()
+#		garbage.position.x = position.x + i * 40
+#		garbage.position.y = position.y
+#		parent.add_child(garbage)
 		
 #	var parent = self
 	for i in range(30):
