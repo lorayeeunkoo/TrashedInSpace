@@ -14,7 +14,8 @@ func _ready():
 	# Initialization here
 	camera = $Camera2D
 	camera.make_current()
-
+	camera.offset_v = 60
+	
 	tether = TETHER_SCENE.instance()
 	tether.position.x = position.x - 150
 	tether.position.y = position.y + 800
@@ -70,12 +71,17 @@ func _process(delta):
 	var camY = 5
 	var delta_position = global_position - smallShip.global_position
 	var mag = delta_position.length()
-	var mapped = reMap(mag, 5000, 1000, 20, 7)
+	var mapped = reMap(mag, 5000, 1000, 15, 5)
 	var camZoom = Vector2(mapped, mapped)
 	camera.zoom = camZoom
-
-
-
+	var delta_y = global_position.y - smallShip.global_position.y
+	var mapped_y = reMap(delta_y, 6000, 0, 15, 5)
+	if mapped_y < 10.5:
+		if camera.offset_v >= 60 - mapped_y - 40:
+			camera.offset_v -= 3
+	else:
+		if (camera.offset_v <= 60):
+			camera.offset_v += 3
 
 func _on_ship_body_entered(body):
 	pass # replace with function body
