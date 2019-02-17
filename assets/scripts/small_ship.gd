@@ -1,8 +1,8 @@
 extends RigidBody2D
-
 var area
 
 func _ready():
+	
 	# Called when the node is added to the scene for the first time.
 	# Initialization here
 	area = $"MagnetForce"
