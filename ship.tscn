@@ -4,7 +4,7 @@
 [ext_resource path="res://interior.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/sprites/ship.png" type="Texture" id=3]
 
-[node name="ship" type="RigidBody2D"]
+[node name="ship" type="RigidBody2D" index="0"]
 
 input_pickable = false
 collision_layer = 1
