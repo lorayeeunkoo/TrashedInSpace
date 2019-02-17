@@ -1,10 +1,6 @@
 extends CanvasLayer
 
-signal start_game
-
-# class member variables go here, for example:
-# var a = 2
-# var b = "textvar"
+signal end_game
 
 func _ready():
 	# Called when the node is added to the scene for the first time.
@@ -27,3 +23,7 @@ func _on_StartButton_pressed():
 
 func _on_MessageTimer_timeout():
     $MessageLabel.hide()
+
+func _on_Button_pressed():
+	get_tree().change_scene("res://Startingscreen.tscn")
+	pass # replace with function body

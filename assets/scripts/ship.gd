@@ -17,6 +17,7 @@ func _ready():
 	tether.position.y = position.y + 800
 	add_child(tether)
 	smallShip = tether.get_child(0).small_ship
+	add_to_group("Ship")
 #
 #func getRootChild(n, root):
 #	var child = root.get_child(1)
