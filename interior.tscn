@@ -8,7 +8,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 10, 10 )
 
-[node name="interior" type="StaticBody2D"]
+[node name="interior" type="StaticBody2D" index="0"]
 
 position = Vector2( 1465.42, 1291.07 )
 input_pickable = false
@@ -55,7 +55,7 @@ shape = SubResource( 1 )
 [node name="FuelArea" type="Area2D" parent="." index="3"]
 
 editor/display_folded = true
-position = Vector2( -782.42, -286.07 )
+position = Vector2( -781.42, -287.07 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -121,6 +121,8 @@ scale = Vector2( 17.6073, 16.9258 )
 shape = SubResource( 1 )
 
 [node name="Elevator" type="Node" parent="." index="6"]
+
+editor/display_folded = true
 
 [node name="ElevatorArea3" type="Area2D" parent="Elevator" index="0"]
 

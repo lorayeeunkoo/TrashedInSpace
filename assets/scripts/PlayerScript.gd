@@ -11,6 +11,8 @@ func _ready():
 	top = $"../ElevatorSpot3"
 	mid = $"../ElevatorSpot2"
 	bot = $"../ElevatorSpot1"
+	ship = $"../../../../../ship"
+	smallShip = ship.smallShip
 	pass
 
 func _physics_process(delta):
@@ -28,7 +30,6 @@ func _physics_process(delta):
 		
 	if Input.is_action_just_pressed("ui_accept"):
 		if($RayCast2D.is_colliding()):
-#			print($RayCast2D.get_collider().name)
 			if $RayCast2D.get_collider().name == "ElevatorArea3":
 				position = bot.position
 				pass
@@ -38,6 +39,19 @@ func _physics_process(delta):
 			if $RayCast2D.get_collider().name == "ElevatorArea1":
 				position = mid.position
 				pass
+			if $RayCast2D.get_collider().name == "FuelArea":
+				position = mid.position
+				pass
+			if $RayCast2D.get_collider().name == "DockArea":
+				position = mid.position
+				pass
+			if $RayCast2D.get_collider().name == "CannonArea":
+				position = mid.position
+				pass
+			if $RayCast2D.get_collider().name == "DriveArea":
+				position = mid.position
+				pass
+
 	
 	if is_on_floor():
 		if(Input.is_action_just_pressed("ui_focus_next")):
