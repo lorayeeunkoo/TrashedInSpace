@@ -1,20 +1,20 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://anchor.gd" type="Script" id=1]
+[ext_resource path="res://assets/scripts/anchor.gd" type="Script" id=1]
 
 [sub_resource type="CircleShape2D" id=1]
 
 custom_solver_bias = 0.0
 radius = 10.0
 
-[node name="Node" type="Node" index="0"]
+[node name="Node" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="." index="0"]
 
 position = Vector2( 0, 70 )
 anchor_mode = 1
 rotating = false
-current = true
+current = false
 zoom = Vector2( 2, 2 )
 limit_left = -10000000
 limit_top = -10000000

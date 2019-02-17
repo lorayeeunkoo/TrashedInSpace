@@ -1,20 +1,26 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://icon.png" type="Texture" id=1]
-[ext_resource path="res://ship.tscn" type="PackedScene" id=2]
+[ext_resource path="res://trashmain.tscn" type="PackedScene" id=1]
+[ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://ship.tscn" type="PackedScene" id=3]
 
 [node name="root" type="Node"]
 
-[node name="Sprite" type="Sprite" parent="." index="0"]
+[node name="Trashmain" parent="." index="0" instance=ExtResource( 1 )]
 
+_sections_unfolded = [ "Pause" ]
+
+[node name="Sprite" type="Sprite" parent="." index="1"]
+
+visible = false
 scale = Vector2( 153.968, 153.968 )
-texture = ExtResource( 1 )
+texture = ExtResource( 2 )
 
-[node name="ship" parent="." index="1" instance=ExtResource( 2 )]
+[node name="ship" parent="." index="2" instance=ExtResource( 3 )]
 
 position = Vector2( -981.907, -22.3161 )
 
-[node name="solid rock" type="RigidBody2D" parent="." index="2"]
+[node name="solid rock" type="RigidBody2D" parent="." index="3"]
 
 position = Vector2( 757.777, 360.007 )
 input_pickable = false
@@ -35,6 +41,7 @@ linear_velocity = Vector2( 0, 0 )
 linear_damp = -1.0
 angular_velocity = 0.0
 angular_damp = -1.0
+_sections_unfolded = [ "Pause" ]
 __meta__ = {
 "_edit_group_": true
 }
