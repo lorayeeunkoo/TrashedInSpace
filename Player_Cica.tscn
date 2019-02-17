@@ -54,7 +54,7 @@ _sections_unfolded = [ "Resource" ]
 custom_solver_bias = 0.0
 extents = Vector2( 10, 10 )
 
-[node name="Cica" type="KinematicBody2D" index="0"]
+[node name="Cica" type="KinematicBody2D"]
 
 input_pickable = false
 collision_layer = 1

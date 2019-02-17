@@ -52,7 +52,7 @@ animations = [ {
 custom_solver_bias = 0.0
 extents = Vector2( 333.612, 10.5402 )
 
-[node name="Decker" type="KinematicBody2D" index="0"]
+[node name="Decker" type="KinematicBody2D"]
 
 input_pickable = false
 collision_layer = 1
@@ -65,7 +65,7 @@ position = Vector2( 645.497, 362.338 )
 scale = Vector2( 0.671998, 0.673999 )
 frames = SubResource( 1 )
 animation = "walk"
-frame = 4
+frame = 10
 playing = true
 _sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
 
