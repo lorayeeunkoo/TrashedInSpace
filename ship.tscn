@@ -6,6 +6,7 @@
 
 [node name="ship" type="RigidBody2D" index="0"]
 
+position = Vector2( 0, -1 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -16,8 +17,8 @@ bounce = 0.0
 gravity_scale = 0.0
 custom_integrator = false
 continuous_cd = 0
-contacts_reported = 0
-contact_monitor = false
+contacts_reported = 10000
+contact_monitor = true
 sleeping = false
 can_sleep = true
 linear_velocity = Vector2( 0, 0 )
@@ -52,7 +53,11 @@ drag_margin_bottom = 0.2
 editor_draw_screen = true
 editor_draw_limits = false
 editor_draw_drag_margin = false
+<<<<<<< HEAD
 _sections_unfolded = [ "Smoothing", "Transform" ]
+=======
+_sections_unfolded = [ "Limit", "Smoothing" ]
+>>>>>>> dev2
 
 [node name="helper alignment sprite" type="Sprite" parent="." index="1"]
 
@@ -113,5 +118,7 @@ shadow_atlas_quad_2 = 3
 shadow_atlas_quad_3 = 4
 
 [node name="interior" parent="ViewportContainer/Viewport" index="0" instance=ExtResource( 3 )]
+
+[connection signal="body_entered" from="." to="." method="_on_ship_body_entered"]
 
 
