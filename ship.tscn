@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://assets/scripts/RigidBody2D.gd" type="Script" id=1]
 [ext_resource path="res://interior.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/sprites/ship.png" type="Texture" id=3]
+[ext_resource path="res://Cannon.tscn" type="PackedScene" id=4]
 
 [node name="ship" type="RigidBody2D"]
 
@@ -110,5 +111,9 @@ polygon = PoolVector2Array( -734.193, -631.495, -990.511, -252.144, -988.461, -5
 
 visible = false
 texture = ExtResource( 3 )
+
+[node name="Cannon" parent="." index="4" instance=ExtResource( 4 )]
+
+position = Vector2( 668.705, 196.183 )
 
 

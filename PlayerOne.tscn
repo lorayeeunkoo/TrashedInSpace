@@ -1,0 +1,58 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://playerAnime.gd" type="Script" id=1]
+[ext_resource path="res://assets/sprites/Decker0001.png" type="Texture" id=2]
+[ext_resource path="res://assets/sprites/Decker0002.png" type="Texture" id=3]
+[ext_resource path="res://assets/sprites/Decker0003.png" type="Texture" id=4]
+[ext_resource path="res://assets/sprites/Decker0004.png" type="Texture" id=5]
+[ext_resource path="res://assets/sprites/Decker0005.png" type="Texture" id=6]
+[ext_resource path="res://assets/sprites/Decker0006.png" type="Texture" id=7]
+[ext_resource path="res://assets/sprites/Decker0007.png" type="Texture" id=8]
+[ext_resource path="res://assets/sprites/Decker0008.png" type="Texture" id=9]
+[ext_resource path="res://assets/sprites/Decker0010.png" type="Texture" id=10]
+[ext_resource path="res://assets/sprites/Decker0011.png" type="Texture" id=11]
+[ext_resource path="res://assets/sprites/Decker0012.png" type="Texture" id=12]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 10 )
+
+[sub_resource type="SpriteFrames" id=2]
+
+animations = [ {
+"frames": [  ],
+"loop": true,
+"name": "New Anim",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ) ],
+"loop": true,
+"name": "walking",
+"speed": 12.0
+} ]
+
+[node name="KinematicBody2D" type="KinematicBody2D" index="0"]
+
+position = Vector2( 555.89, 311.563 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+collision/safe_margin = 0.08
+script = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
+
+position = Vector2( 2.53229, -0.0249023 )
+scale = Vector2( 2.45183, 2.98018 )
+shape = SubResource( 1 )
+
+[node name="GarbageMan" type="AnimatedSprite" parent="." index="1"]
+
+scale = Vector2( 0.054209, 0.062197 )
+frames = SubResource( 2 )
+animation = "walking"
+_sections_unfolded = [ "Transform" ]
+
+
