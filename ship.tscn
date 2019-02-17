@@ -7,6 +7,7 @@
 
 [node name="ship" type="RigidBody2D"]
 
+position = Vector2( 0, -1 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -17,8 +18,8 @@ bounce = 0.0
 gravity_scale = 0.0
 custom_integrator = false
 continuous_cd = 0
-contacts_reported = 0
-contact_monitor = false
+contacts_reported = 10000
+contact_monitor = true
 sleeping = false
 can_sleep = true
 linear_velocity = Vector2( 0, 0 )
@@ -53,7 +54,7 @@ drag_margin_bottom = 0.2
 editor_draw_screen = true
 editor_draw_limits = false
 editor_draw_drag_margin = false
-_sections_unfolded = [ "Smoothing" ]
+_sections_unfolded = [ "Limit", "Smoothing" ]
 
 [node name="ViewportContainer" type="ViewportContainer" parent="." index="1"]
 
@@ -115,5 +116,7 @@ texture = ExtResource( 3 )
 [node name="Cannon" parent="." index="4" instance=ExtResource( 4 )]
 
 position = Vector2( 668.705, 196.183 )
+
+[connection signal="body_entered" from="." to="." method="_on_ship_body_entered"]
 
 

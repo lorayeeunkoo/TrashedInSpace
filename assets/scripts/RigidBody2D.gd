@@ -1,13 +1,13 @@
 extends RigidBody2D
-
 # class member variables go here, for example:
 # var a = 2
 # var b = "textvar"
 var camera
-
+var count=0
 func _ready():
 	# Called when the node is added to the scene for the first time.
 	# Initialization here
+	add_to_group("Ship")
 	camera = $Camera2D
 	camera.make_current()
 	
@@ -33,11 +33,10 @@ func _physics_process(delta):
 	
 	apply_impulse(Vector2(10,0),Vector2(0,torque))
 	apply_impulse(Vector2(-10,0),Vector2(0,-torque))
-	
-#func _integrate_forces(state):
-#	print(state)	
 
-#func _process(delta):
-#	# Called every frame. Delta is time since last frame.
-#	# Update game logic here.
-#	pass
+
+
+func _on_ship_body_entered(body):
+	count+=1
+	print(count)
+
