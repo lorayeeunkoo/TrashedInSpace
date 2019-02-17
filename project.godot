@@ -11,8 +11,13 @@ config_version=3
 [application]
 
 config/name="TrashedInSpace"
-run/main_scene="res://World.tscn"
+run/main_scene="res://root.tscn"
 config/icon="res://icon.png"
+
+[layer_names]
+
+2d_physics/layer_1="exterior"
+2d_physics/layer_11="interior"
 
 [rendering]
 
