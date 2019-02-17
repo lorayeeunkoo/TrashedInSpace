@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://assets/scripts/Trash.gd" type="Script" id=1]
-[ext_resource path="res://assets/sprites/Eyemato.png" type="Texture" id=2]
+[ext_resource path="res://assets/sprites/Steelhead.png" type="Texture" id=2]
 
 [sub_resource type="CapsuleShape2D" id=1]
 
@@ -9,7 +9,7 @@ custom_solver_bias = 0.0
 radius = 4.24395
 height = 12.6724
 
-[node name="Trash" type="RigidBody2D" index="0"]
+[node name="Trash" type="RigidBody2D"]
 
 position = Vector2( 196.478, 196.478 )
 input_pickable = false
@@ -38,21 +38,21 @@ MAX_SPEED = 500
 
 [node name="Visibility" type="VisibilityNotifier2D" parent="." index="0"]
 
-position = Vector2( 11.0496, -7.36646 )
+position = Vector2( 156.608, -61.781 )
 scale = Vector2( 6.15001, 5.94999 )
 rect = Rect2( -10, -10, 20, 20 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
-position = Vector2( -3.4776, -18.9912 )
-scale = Vector2( 17.6334, 8.95127 )
+position = Vector2( 143.182, -69.3246 )
+scale = Vector2( 36.0013, 8.95127 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="." index="2"]
 
-position = Vector2( -21.205, 3.6207 )
-scale = Vector2( 0.145782, 0.153117 )
+position = Vector2( 157.833, -64.4153 )
+scale = Vector2( 0.212855, 0.191896 )
 texture = ExtResource( 2 )
 
 [connection signal="body_entered" from="." to="." method="_on_Trash_body_entered"]

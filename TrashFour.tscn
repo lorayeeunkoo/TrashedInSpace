@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://assets/scripts/Trash.gd" type="Script" id=1]
-[ext_resource path="res://assets/sprites/Eyemato.png" type="Texture" id=2]
+[ext_resource path="res://assets/sprites/UFO.png" type="Texture" id=2]
 
 [sub_resource type="CapsuleShape2D" id=1]
 
@@ -9,7 +9,7 @@ custom_solver_bias = 0.0
 radius = 4.24395
 height = 12.6724
 
-[node name="Trash" type="RigidBody2D" index="0"]
+[node name="Trash" type="RigidBody2D"]
 
 position = Vector2( 196.478, 196.478 )
 input_pickable = false
@@ -45,13 +45,13 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
-position = Vector2( -3.4776, -18.9912 )
-scale = Vector2( 17.6334, 8.95127 )
+position = Vector2( 28.2012, -10.0928 )
+scale = Vector2( 34.6455, 12.1594 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="." index="2"]
 
-position = Vector2( -21.205, 3.6207 )
+position = Vector2( 33.0588, -0.901276 )
 scale = Vector2( 0.145782, 0.153117 )
 texture = ExtResource( 2 )
 
