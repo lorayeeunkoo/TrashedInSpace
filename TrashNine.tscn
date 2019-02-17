@@ -9,7 +9,7 @@ custom_solver_bias = 0.0
 radius = 4.24395
 height = 12.6724
 
-[node name="Trash" type="RigidBody2D" index="0"]
+[node name="Trash" type="RigidBody2D"]
 
 position = Vector2( 196.478, 196.478 )
 input_pickable = false
@@ -45,8 +45,8 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
-position = Vector2( 53.9516, -73.9238 )
-scale = Vector2( 12.8638, 6.60914 )
+position = Vector2( 48.142, -82.3323 )
+scale = Vector2( 12.0618, 6.10096 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="." index="2"]

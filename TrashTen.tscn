@@ -9,7 +9,7 @@ custom_solver_bias = 0.0
 radius = 4.24395
 height = 12.6724
 
-[node name="Trash" type="RigidBody2D" index="0"]
+[node name="Trash" type="RigidBody2D"]
 
 position = Vector2( 196.478, 196.478 )
 input_pickable = false

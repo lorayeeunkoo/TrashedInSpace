@@ -13,19 +13,20 @@ var amount = 25 # number of tries of random
 var preScript = preload("res://assets/scripts/SoftNoise.gd")
 
 var appleSmall = preload("res://appleEye.tscn")
-var trashTwo = preload("res://TrashTwo.tscn")
-var trashThree = preload("res://TrashThree.tscn")
-var trashFour = preload("res://TrashFour.tscn")
-var trashFive = preload("res://TrashFive.tscn")
-var trashSix = preload("res://TrashSix.tscn")
-var banana = preload("")
+var roboMan = preload("res://TrashTwo.tscn")
+var mechEyeball = preload("res://TrashThree.tscn")
+var ufo = preload("res://TrashFour.tscn")
+var skullcandy = preload("res://TrashFive.tscn")
+var hentai = preload("res://TrashSix.tscn")
+var banana = preload("res://TrashSeven.tscn")
+var eyeball = preload("res://TrashEight.tscn")
+var hydrant = preload("res://TrashNine.tscn")
+var greenapple = preload("res://TrashTen.tscn")
 
 
 
 
-
-
-var trashArray = [appleSmall, trashTwo, trashThree, trashFour, trashFive, trashSix, banana]
+var trashArray = [appleSmall, roboMan, mechEyeball, ufo, skullcandy, hentai, banana, eyeball, hydrant, greenapple]
 
 
 func _ready():
