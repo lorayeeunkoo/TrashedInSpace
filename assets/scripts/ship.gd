@@ -21,6 +21,7 @@ func _ready():
 	tether.position.y = position.y + 800
 	add_child(tether)
 	smallShip = tether.get_child(0).small_ship
+	add_to_group("Ship")
 #
 #func getRootChild(n, root):
 #	var child = root.get_child(1)
@@ -68,6 +69,9 @@ func reMap(value, maxInput, minInput, maxOutput, minOutput):
 	return minOutput + (scaledThrust * outputSpan)	
 
 func _process(delta):
+	if fuel <= 0:
+		get_tree().change_scene("res://Endingscreen.tscn")
+		print("game should end")
 	var camX = 5
 	var camY = 5
 	var delta_position = global_position - smallShip.global_position
@@ -84,5 +88,9 @@ func _process(delta):
 		if (camera.offset_v <= 60):
 			camera.offset_v += 3
 
+
 func _on_ship_body_entered(body):
-	pass # replace with function body
+	fuel-=1
+	print("fuel deducted")
+
+	
