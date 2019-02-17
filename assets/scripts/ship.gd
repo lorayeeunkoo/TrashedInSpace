@@ -17,6 +17,8 @@ func _ready():
 	tether.position.y = position.y + 800
 	add_child(tether)
 	smallShip = tether.get_child(0).small_ship
+	
+	apply_impulse(Vector2(0,0),Vector2(1000,0))
 #
 #func getRootChild(n, root):
 #	var child = root.get_child(1)
