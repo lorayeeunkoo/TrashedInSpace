@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://assets/scripts/RigidBody2D.gd" type="Script" id=1]
+[ext_resource path="res://assets/scripts/ship.gd" type="Script" id=1]
 [ext_resource path="res://assets/sprites/ship.png" type="Texture" id=2]
 [ext_resource path="res://interior.tscn" type="PackedScene" id=3]
 
@@ -11,7 +11,7 @@ input_pickable = false
 collision_layer = 1
 collision_mask = 3
 mode = 0
-mass = 1.0
+mass = 100.0
 friction = 1.0
 bounce = 0.0
 gravity_scale = 0.0
@@ -26,21 +26,21 @@ linear_damp = -1.0
 angular_velocity = 0.0
 angular_damp = -1.0
 script = ExtResource( 1 )
-_sections_unfolded = [ "Collision" ]
+_sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="Camera2D" type="Camera2D" parent="." index="0"]
 
 position = Vector2( -230, 90 )
 anchor_mode = 1
 rotating = true
-current = false
-zoom = Vector2( 5, 5 )
+current = true
+zoom = Vector2( 8, 8 )
 limit_left = -10000000
 limit_top = -10000000
 limit_right = 10000000
 limit_bottom = 10000000
 limit_smoothed = false
-drag_margin_h_enabled = false
+drag_margin_h_enabled = true
 drag_margin_v_enabled = false
 smoothing_enabled = true
 smoothing_speed = 5.0
@@ -53,7 +53,7 @@ drag_margin_bottom = 0.2
 editor_draw_screen = true
 editor_draw_limits = false
 editor_draw_drag_margin = false
-_sections_unfolded = [ "Limit", "Smoothing" ]
+_sections_unfolded = [ "Smoothing", "Transform" ]
 
 [node name="helper alignment sprite" type="Sprite" parent="." index="1"]
 
@@ -74,10 +74,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = -1464.0
-margin_top = -702.0
-margin_right = 1476.0
-margin_bottom = 889.0
+margin_left = -1465.0
+margin_top = -1297.0
+margin_right = 1475.0
+margin_bottom = 1502.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
@@ -86,11 +86,14 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 stretch = true
 stretch_shrink = 1
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Viewport" type="Viewport" parent="ViewportContainer" index="0"]
 
 arvr = false
-size = Vector2( 2940, 1591 )
+size = Vector2( 2940, 2799 )
 own_world = true
 world = null
 transparent_bg = true
