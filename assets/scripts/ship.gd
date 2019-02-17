@@ -74,3 +74,8 @@ func _process(delta):
 	var camZoom = Vector2(mapped, mapped)
 	camera.zoom = camZoom
 
+
+
+
+func _on_ship_body_entered(body):
+	pass # replace with function body

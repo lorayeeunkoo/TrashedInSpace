@@ -1,9 +1,20 @@
 extends Node
 export (PackedScene) var Trash
+var score
 
 func _ready():
 	randomize()
+
+func new_game():
+	score = 0
+	$HUD.update_score(score)
+	$Player.start($StartPosition.position)
 	$TrashTimer.start()
+
+func game_over():
+	$TrashTimer.stop()
+	$HUD.show_game_over()
+
 
 func _on_TrashTimer_timeout():
 	$TrashPath/TrashSpawnLocation.set_offset(randi())
@@ -17,4 +28,8 @@ func _on_TrashTimer_timeout():
 
 func update_score(score):
     $ScoreLabel.text = str(score)
-
+# no score timer
+#func _on_ScoreTimer_timeout():
+#	score += 1
+#	$HUD.update_score(score)
+	
