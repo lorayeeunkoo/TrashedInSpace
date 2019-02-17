@@ -1,15 +1,24 @@
 extends Node
 
-# class member variables go here, for example:
-# var a = 2
-# var b = "textvar"
+export (PackedScene) var Trash
+var score
 
 func _ready():
-	# Called when the node is added to the scene for the first time.
-	# Initialization here
 	pass
+	
+func new_game():
+	score = 0
+	$HUD.update_score(score)
+	
+func game_over():
+	$HUD.show_game_over()
 
-#func _process(delta):
-#	# Called every frame. Delta is time since last frame.
-#	# Update game logic here.
-#	pass
+
+func update_score(score):
+    $ScoreLabel.text = str(score)
+	
+
+#func _on_ScoreTimer_timeout():
+#	score += 1
+#	$HUD.update_score(score)
+	
