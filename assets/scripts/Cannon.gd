@@ -5,8 +5,10 @@ const ROTATE_SPEED = 0.10
 var timer
 var bullet_delay = 0.15
 var can_shoot = true
-
+var ship
 func _ready():
+	ship = get_parent()
+
 	timer = Timer.new()
 	timer.set_wait_time( bullet_delay )
 	timer.set_one_shot(true)
@@ -20,12 +22,16 @@ func on_timeout_complete():
 
 func _process(delta):
 	var speed_y = 0
-
-	if Input.is_action_just_pressed("key_right"):
-		rotation = rotation + ROTATE_SPEED
-	elif Input.is_action_just_pressed("key_left"):
-		rotation = rotation - ROTATE_SPEED
-	
+	if ship.playerCannon == 0:
+		if Input.is_action_just_pressed("key_right"):
+			rotation = rotation + ROTATE_SPEED
+		elif Input.is_action_just_pressed("key_left"):
+			rotation = rotation - ROTATE_SPEED
+	if ship.playerCannon == 1:
+		if Input.is_action_just_pressed("ui_right"):
+			rotation = rotation + ROTATE_SPEED
+		elif Input.is_action_just_pressed("ui_left"):
+			rotation = rotation - ROTATE_SPEED
 	if rotation > PI/2: rotation = PI/2
 	if rotation < -PI/2: rotation = -PI/2
 	

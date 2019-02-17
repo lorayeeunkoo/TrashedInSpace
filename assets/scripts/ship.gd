@@ -7,6 +7,7 @@ var tether
 var smallShip
 var player
 var playerSmall
+var playerCannon
 
 var fuel
 
@@ -27,6 +28,7 @@ func _ready():
 	apply_impulse(Vector2(0,0),Vector2(1000,0))
 	player = -1 # make player = none
 	playerSmall = -1
+	playerCannon = -1
 	add_to_group("Ship")
 	$music.play()
 #func getRootChild(n, root):

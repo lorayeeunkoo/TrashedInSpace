@@ -69,7 +69,7 @@ func _physics_process(delta):
 			if Input.is_action_pressed('key_right'):
 				torque += 5
 				ship.fuel -= 0.05
-		if(ship.playerSmall==0):
+		if(ship.playerSmall==1):
 			if Input.is_action_pressed('ui_up'):
 				force = Vector2(0,-180)
 				force = force.rotated(small_ship.global_rotation)
