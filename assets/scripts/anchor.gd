@@ -12,10 +12,10 @@ func _ready():
 	# Called when the node is added to the scene for the first time.
 	# Initialization here
 	var parent = self
-	for i in range(40):
+	for i in range(30):
 		var child = LINK_SCENE.instance()
-		child.position.x = position.x + 1*15
-		child.position.y = position.y
+		child.position.x = position.x
+		child.position.y = position.y + 200
 		parent.add_child(child)
 		
 		var link = PinJoint2D.new()
@@ -48,7 +48,6 @@ func _physics_process(delta):
 		torque -= 5
 	if Input.is_action_pressed('ui_right'):
 		torque += 5
-	print(small_ship.rotation)
 
 #	applied_torque = torque
 #	applied_force = force
