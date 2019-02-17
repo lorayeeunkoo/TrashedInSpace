@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=2]
 
-[ext_resource path="res://Trash.gd" type="Script" id=1]
+[ext_resource path="res://assets/scripts/Trash.gd" type="Script" id=1]
 [ext_resource path="res://assets/sprites/trash/r1.jpg" type="Texture" id=2]
 [ext_resource path="res://assets/sprites/trash/r2.jpg" type="Texture" id=3]
 [ext_resource path="res://assets/sprites/trash/r3.jpg" type="Texture" id=4]
@@ -9,6 +9,8 @@
 [ext_resource path="res://assets/sprites/trash/u2.jpg" type="Texture" id=7]
 [ext_resource path="res://assets/sprites/trash/u3.jpg" type="Texture" id=8]
 [ext_resource path="res://assets/sprites/trash/u4.jpg" type="Texture" id=9]
+
+
 
 [sub_resource type="SpriteFrames" id=1]
 
