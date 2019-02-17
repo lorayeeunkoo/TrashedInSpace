@@ -54,18 +54,18 @@ func _physics_process(delta):
 	var force = Vector2()
 	var torque = 0
 	if ship.fuel >= 0.05:
-		if Input.is_action_pressed('ui_up'):
+		if Input.is_action_pressed('key_up'):
 			force = Vector2(0,-180)
 			force = force.rotated(small_ship.global_rotation)
 			ship.fuel -= 0.05
-		if Input.is_action_pressed('ui_down'):
+		if Input.is_action_pressed('key_down'):
 			force = Vector2(0,180)
 			force = force.rotated(small_ship.global_rotation)
 			ship.fuel -= 0.05
-		if Input.is_action_pressed('ui_left'):
+		if Input.is_action_pressed('key_left'):
 			torque -= 5
 			ship.fuel -= 0.05
-		if Input.is_action_pressed('ui_right'):
+		if Input.is_action_pressed('key_right'):
 			torque += 5
 			ship.fuel -= 0.05
 
