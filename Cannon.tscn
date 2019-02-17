@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Cannon.gd" type="Script" id=1]
+[ext_resource path="res://assets/sprites/better.png" type="Texture" id=2]
+
+[node name="Cannon" type="Node2D"]
+
+position = Vector2( 201.984, 186.91 )
+script = ExtResource( 1 )
+_sections_unfolded = [ "Animation", "Material", "Pause", "Region", "Transform", "Visibility", "Z Index" ]
+
+[node name="Sprite" type="Sprite" parent="." index="0"]
+
+position = Vector2( 66.2815, -15.7674 )
+texture = ExtResource( 2 )
+
+[node name="Position2D" type="Position2D" parent="Sprite" index="0"]
+
+position = Vector2( 75.1442, 22.8555 )
+
+
