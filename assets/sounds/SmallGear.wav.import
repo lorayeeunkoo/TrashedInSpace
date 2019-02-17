@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/SmallGear.wav-890ca11374d8d53d57534da23a2d13ea.sample"
+
+[deps]
+
+source_file="res://assets/sounds/SmallGear.wav"
+dest_files=[ "res://.import/SmallGear.wav-890ca11374d8d53d57534da23a2d13ea.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

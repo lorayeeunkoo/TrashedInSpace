@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Gas_Gulp.wav-9d8e64121adc4fed6e898e07f0a93cd9.sample"
+
+[deps]
+
+source_file="res://assets/sounds/Gas_Gulp.wav"
+dest_files=[ "res://.import/Gas_Gulp.wav-9d8e64121adc4fed6e898e07f0a93cd9.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

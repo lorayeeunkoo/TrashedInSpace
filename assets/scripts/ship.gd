@@ -67,6 +67,7 @@ func _physics_process(delta):
 				torque += 5000
 				fuel -= 0.1
 
+	
 #	applied_torque = torque
 #	applied_force = force
 	apply_impulse(Vector2(0,0),force)

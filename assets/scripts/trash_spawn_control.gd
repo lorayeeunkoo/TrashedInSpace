@@ -11,7 +11,21 @@ var quad_size = 7500
 var amount = 25 # number of tries of random
 
 var preScript = preload("res://assets/scripts/SoftNoise.gd")
-var trashScene = preload("res://Trash.tscn")
+
+var appleSmall = preload("res://appleEye.tscn")
+var trashTwo = preload("res://TrashTwo.tscn")
+var trashThree = preload("res://TrashThree.tscn")
+var trashFour = preload("res://TrashFour.tscn")
+var trashFive = preload("res://TrashFive.tscn")
+var trashSix = preload("res://TrashSix.tscn")
+
+
+
+
+
+
+var trashArray = [appleSmall, trashTwo, trashThree, trashFour, trashFive, trashSix]
+
 
 func _ready():
 	ship = $"../ship"
@@ -54,8 +68,11 @@ func spawn_trash(quad):
 			var noise = softnoise.simple_noise2d(rand_loc.x, rand_loc.y)
 			
 			if noise > 0:
-				var trash = trashScene.instance()
+				var randomNumber = randi() % trashArray.size()
+				var trash = trashArray[randomNumber].instance()
 				trash.position = rand_loc + quad * quad_size
+				if randomNumber == 3:
+					trash.isBigTrash = true;
 				add_child(trash)
 		
 		
