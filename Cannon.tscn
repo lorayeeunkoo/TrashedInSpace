@@ -1,21 +1,29 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Cannon.gd" type="Script" id=1]
-[ext_resource path="res://assets/sprites/better.png" type="Texture" id=2]
+[ext_resource path="res://assets/scripts/Cannon.gd" type="Script" id=1]
+[ext_resource path="res://assets/sprites/cannon.png" type="Texture" id=2]
+[ext_resource path="res://assets/sprites/screw.png" type="Texture" id=3]
 
 [node name="Cannon" type="Node2D"]
 
-position = Vector2( 201.984, 186.91 )
+position = Vector2( 180, 186.91 )
+scale = Vector2( 0.25, 0.25 )
 script = ExtResource( 1 )
 _sections_unfolded = [ "Animation", "Material", "Pause", "Region", "Transform", "Visibility", "Z Index" ]
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
-position = Vector2( 66.2815, -15.7674 )
+position = Vector2( -3842.78, -24.7301 )
 texture = ExtResource( 2 )
 
 [node name="Position2D" type="Position2D" parent="Sprite" index="0"]
 
-position = Vector2( 75.1442, 22.8555 )
+position = Vector2( 4841.76, 27.2862 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="screw" type="Sprite" parent="." index="1"]
+
+position = Vector2( 2.80701, 46.0526 )
+texture = ExtResource( 3 )
 
 

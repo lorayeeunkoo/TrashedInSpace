@@ -13,6 +13,6 @@ func _on_Visibility_screen_exited():
 
 
 func _on_Trash_body_entered(body):
-	if body.is_in_group("Ship"):
+	if body.is_in_group("Ship") || body.is_in_group("Lazer"):
 		queue_free()
 		

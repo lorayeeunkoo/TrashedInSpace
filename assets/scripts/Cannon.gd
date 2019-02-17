@@ -1,5 +1,5 @@
 extends Node2D
-const LASER = preload ("res://laserbeam.tscn")
+const LASER = preload ("res://LaserBeam.tscn")
 const SPEED = 10
 const ROTATE_SPEED = 0.10
 var timer
@@ -41,8 +41,8 @@ func _process(delta):
 		var laserbeam = LASER.instance()
 		get_tree().get_root().add_child(laserbeam)
 		laserbeam.position = $"Sprite/Position2D".global_position
-		laserbeam.rotation = $"Sprite/Position2D".global_rotation
-		
+		laserbeam.rotation = $"Sprite/Position2D".global_rotation 
+				
 		can_shoot = false	
 		
 		timer.start()  
