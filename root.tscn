@@ -10,6 +10,7 @@
 
 [node name="Sprite" type="Sprite" parent="." index="1"]
 
+visible = false
 scale = Vector2( 153.968, 153.968 )
 texture = ExtResource( 2 )
 
