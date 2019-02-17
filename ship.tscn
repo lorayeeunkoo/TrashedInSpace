@@ -4,13 +4,13 @@
 [ext_resource path="res://interior.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/sprites/ship.png" type="Texture" id=3]
 
-[node name="ship" type="RigidBody2D"]
+[node name="ship" type="RigidBody2D" index="0"]
 
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
 mode = 0
-mass = 1.0
+mass = 50.0
 friction = 1.0
 bounce = 0.0
 gravity_scale = 0.0
@@ -110,5 +110,15 @@ polygon = PoolVector2Array( -734.193, -631.495, -990.511, -252.144, -988.461, -5
 
 visible = false
 texture = ExtResource( 3 )
+
+[node name="PinJoint2D" type="PinJoint2D" parent="." index="4"]
+
+position = Vector2( -1050, 850 )
+node_a = NodePath("../CollisionPolygon2D")
+node_b = NodePath("")
+bias = 0.0
+disable_collision = true
+softness = 0.0
+_sections_unfolded = [ "Transform" ]
 
 
