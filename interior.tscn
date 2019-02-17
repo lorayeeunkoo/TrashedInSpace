@@ -1,11 +1,12 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://assets/sprites/ship.png" type="Texture" id=1]
+[ext_resource path="res://Player0.tscn" type="PackedScene" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 129.029, 123.209 )
+extents = Vector2( 10, 10 )
 
 [node name="interior" type="StaticBody2D"]
 
@@ -25,35 +26,174 @@ scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="RigidBody2D" type="RigidBody2D" parent="." index="1"]
+[node name="Player" parent="." index="1" instance=ExtResource( 2 )]
 
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-mode = 0
-mass = 1.0
-friction = 1.0
-bounce = 0.0
-gravity_scale = 1.0
-custom_integrator = false
-continuous_cd = 0
-contacts_reported = 0
-contact_monitor = false
-sleeping = false
-can_sleep = true
-linear_velocity = Vector2( 0, 0 )
-linear_damp = -1.0
-angular_velocity = 0.0
-angular_damp = -1.0
+position = Vector2( -249.42, -267.07 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D" index="0"]
+[node name="DriveArea" type="Area2D" parent="." index="2"]
 
-position = Vector2( -84.845, -318.394 )
-rotation = 4.39823
+editor/display_folded = true
+position = Vector2( 526.58, -267.07 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 32768
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Collision" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DriveArea" index="0"]
+
+scale = Vector2( 22.9069, 16.9258 )
 shape = SubResource( 1 )
-_sections_unfolded = [ "Transform" ]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="2"]
+[node name="FuelArea" type="Area2D" parent="." index="3"]
+
+editor/display_folded = true
+position = Vector2( -781.42, -287.07 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 32768
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Collision" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FuelArea" index="0"]
+
+scale = Vector2( 22.9069, 16.9258 )
+shape = SubResource( 1 )
+
+[node name="CannonArea" type="Area2D" parent="." index="4"]
+
+editor/display_folded = true
+position = Vector2( 565.58, 404.93 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 32768
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Collision" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CannonArea" index="0"]
+
+position = Vector2( -68.8949, 0 )
+scale = Vector2( 17.6073, 16.9258 )
+shape = SubResource( 1 )
+
+[node name="DockArea" type="Area2D" parent="." index="5"]
+
+editor/display_folded = true
+position = Vector2( 556.58, 1108.93 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 32768
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Collision" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DockArea" index="0"]
+
+position = Vector2( -68.8949, 0 )
+scale = Vector2( 17.6073, 16.9258 )
+shape = SubResource( 1 )
+
+[node name="Elevator" type="Node" parent="." index="6"]
+
+editor/display_folded = true
+
+[node name="ElevatorArea3" type="Area2D" parent="Elevator" index="0"]
+
+editor/display_folded = true
+position = Vector2( 1472, 1020 )
+scale = Vector2( 0.5, 1 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 32768
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Collision" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Elevator/ElevatorArea3" index="0"]
+
+scale = Vector2( 22.9069, 16.9258 )
+shape = SubResource( 1 )
+
+[node name="ElevatorArea2" type="Area2D" parent="Elevator" index="1"]
+
+position = Vector2( 1472, 1696 )
+scale = Vector2( 0.5, 1 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 32768
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Collision" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Elevator/ElevatorArea2" index="0"]
+
+position = Vector2( -2, 4.99997 )
+scale = Vector2( 22.9069, 16.9258 )
+shape = SubResource( 1 )
+
+[node name="ElevatorArea1" type="Area2D" parent="Elevator" index="2"]
+
+editor/display_folded = true
+position = Vector2( 1472, 2400 )
+scale = Vector2( 0.5, 1 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 32768
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Collision" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Elevator/ElevatorArea1" index="0"]
+
+scale = Vector2( 22.9069, 16.9258 )
+shape = SubResource( 1 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="7"]
 
 position = Vector2( -0.867676, -157.999 )
 build_mode = 0
@@ -62,5 +202,16 @@ polygon = PoolVector2Array( -1386.09, -55.1527, -1406.69, 374.123, -1231.55, 820
 [node name="TrashPosition2D" type="Position2D" parent="." index="3"]
 
 position = Vector2( -50, 1000 )
+[node name="ElevatorSpot1" type="Position2D" parent="." index="8"]
+
+position = Vector2( 6.57996, 1140.93 )
+
+[node name="ElevatorSpot2" type="Position2D" parent="." index="9"]
+
+position = Vector2( 6.57996, 468.93 )
+
+[node name="ElevatorSpot3" type="Position2D" parent="." index="10"]
+
+position = Vector2( 6.57996, -203.07 )
 
 
