@@ -36,7 +36,7 @@ animations = [ {
 } ]
 _sections_unfolded = [ "Resource" ]
 
-[node name="Clothesline" type="Node2D" index="0"]
+[node name="Clothesline" type="Node2D"]
 
 position = Vector2( 32.5074, 32.5074 )
 
@@ -46,7 +46,7 @@ position = Vector2( 398.471, 197.411 )
 scale = Vector2( 0.365958, 0.399458 )
 frames = SubResource( 1 )
 animation = "default"
-frame = 15
+frame = 6
 playing = true
 _sections_unfolded = [ "Z Index" ]
 

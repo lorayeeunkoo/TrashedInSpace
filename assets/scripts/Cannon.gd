@@ -21,14 +21,7 @@ func on_timeout_complete():
 func _process(delta):
 	var speed_y = 0
 
-	
-	
-	if Input.is_action_pressed("ui_up"):
-		speed_y = -SPEED
-	elif Input.is_action_pressed("ui_down"):
-		speed_y = SPEED
-		
-	elif Input.is_action_just_pressed("ui_right"):
+	if Input.is_action_just_pressed("ui_right"):
 		rotation = rotation + ROTATE_SPEED
 	elif Input.is_action_just_pressed("ui_left"):
 		rotation = rotation - ROTATE_SPEED
@@ -44,6 +37,8 @@ func _process(delta):
 		laserbeam.rotation = $"Sprite/Position2D".global_rotation 
 				
 		can_shoot = false	
+		
+		get_node("AudioPlayer").play(0)
 		
 		timer.start()  
 		

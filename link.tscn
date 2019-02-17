@@ -1,4 +1,6 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/sprites/Rope_Segment.png" type="Texture" id=1]
 
 [sub_resource type="CapsuleShape2D" id=1]
 
@@ -6,7 +8,7 @@ custom_solver_bias = 0.0
 radius = 75.0
 height = 25.0
 
-[node name="link" type="RigidBody2D" index="0"]
+[node name="link" type="RigidBody2D"]
 
 input_pickable = false
 collision_layer = 1
@@ -30,5 +32,13 @@ angular_damp = -1.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
 
 shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="." index="1"]
+
+position = Vector2( -3.81977, -1.13491 )
+rotation = -1.58065
+scale = Vector2( 1.08897, 1.08296 )
+texture = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
 
 
