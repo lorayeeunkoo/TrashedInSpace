@@ -8,7 +8,7 @@ var ship
 var lastQuad = Vector2()
 var location_history = {}
 var quad_size = 7500
-var amount = 100 # number of tries of random
+var amount = 25 # number of tries of random
 
 var preScript = preload("res://assets/scripts/SoftNoise.gd")
 var trashScene = preload("res://Trash.tscn")
