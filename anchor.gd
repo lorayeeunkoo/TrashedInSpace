@@ -3,6 +3,9 @@ extends KinematicBody2D
 const LINK_SCENE = preload("res://link.tscn")
 const SMALL_SHIP_SCENE = preload("res://small_ship.tscn")
 
+const DUMMY_GARBAGE_SCENE = preload("res://dummyGarbage.tscn")
+var numTrash = 10
+
 # class member variables go here, for example:
 # var a = 2
 # var b = "textvar"
@@ -11,7 +14,18 @@ var small_ship
 func _ready():
 	# Called when the node is added to the scene for the first time.
 	# Initialization here
+	
+	#Initialize/Create the rigidbody objects to be dummy trash
 	var parent = self
+	
+	for i in range (numTrash):
+		#Set each garbage in different locations each time
+		var garbage = DUMMY_GARBAGE_SCENE.instance()
+		garbage.position.x = position.x + i * 40
+		garbage.position.y = position.y
+		parent.add_child(garbage)
+		
+#	var parent = self
 	for i in range(40):
 		var child = LINK_SCENE.instance()
 		child.position.x = position.x + 1*15
@@ -48,7 +62,6 @@ func _physics_process(delta):
 		torque -= 5
 	if Input.is_action_pressed('ui_right'):
 		torque += 5
-	print(small_ship.rotation)
 
 #	applied_torque = torque
 #	applied_force = force
