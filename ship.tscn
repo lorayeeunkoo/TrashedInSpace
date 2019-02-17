@@ -103,6 +103,7 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 stretch = true
 stretch_shrink = 1
+_sections_unfolded = [ "Focus", "Hint", "Margin", "Mouse", "Rect" ]
 __meta__ = {
 "_edit_group_": true
 }
