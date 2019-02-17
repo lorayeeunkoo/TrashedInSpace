@@ -3,7 +3,7 @@
 [ext_resource path="res://Trashmain.tscn" type="PackedScene" id=1]
 [ext_resource path="res://ship.tscn" type="PackedScene" id=2]
 
-[node name="root" type="Node"]
+[node name="root" type="Node" index="0"]
 
 [node name="Trashmain" parent="." index="0" instance=ExtResource( 1 )]
 
