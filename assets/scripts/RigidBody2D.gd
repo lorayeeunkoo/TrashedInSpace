@@ -1,16 +1,18 @@
 extends RigidBody2D
-# class member variables go here, for example:
-# var a = 2
-# var b = "textvar"
+
 var camera
-var count=0
+var count
+
 func _ready():
-	# Called when the node is added to the scene for the first time.
-	# Initialization here
 	add_to_group("Ship")
 	camera = $Camera2D
 	camera.make_current()
-	
+	hide()
+
+func start(pos):
+	position=pos
+	show()
+	$Collision.disabled = false
 	
 func _physics_process(delta):
 	var force = Vector2()
@@ -40,3 +42,4 @@ func _on_ship_body_entered(body):
 	count+=1
 	print(count)
 
+#need end game stuff
