@@ -6,6 +6,7 @@
 
 [node name="ship" type="RigidBody2D"]
 
+position = Vector2( 0, -1 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -16,8 +17,8 @@ bounce = 0.0
 gravity_scale = 0.0
 custom_integrator = false
 continuous_cd = 0
-contacts_reported = 0
-contact_monitor = false
+contacts_reported = 10000
+contact_monitor = true
 sleeping = false
 can_sleep = true
 linear_velocity = Vector2( 0, 0 )
@@ -52,7 +53,7 @@ drag_margin_bottom = 0.2
 editor_draw_screen = true
 editor_draw_limits = false
 editor_draw_drag_margin = false
-_sections_unfolded = [ "Smoothing" ]
+_sections_unfolded = [ "Limit", "Smoothing" ]
 
 [node name="ViewportContainer" type="ViewportContainer" parent="." index="1"]
 
@@ -104,11 +105,13 @@ shadow_atlas_quad_3 = 4
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="2"]
 
 build_mode = 0
-polygon = PoolVector2Array( -734.193, -631.495, -990.511, -252.144, -988.461, -51.1901, -1332.95, -67.5945, -1345.26, 352.767, -1177.11, 348.666, -1179.16, 758.776, -1119.7, 822.342, -955.652, 814.14, -898.237, 766.978, -890.035, 664.45, 617.117, 656.248, 654.026, 715.714, 717.593, 588.58, 816.02, 508.609, 1084.64, 518.862, 1070.29, 313.807, 756.554, 291.251, 635.572, 244.089, 651.976, 30.8318, 924.699, 2.12411, 1047.73, -254.194, 883.688, -492.057, 674.532, -625.343 )
+polygon = PoolVector2Array( -734.193, -631.495, -990.511, -252.144, -988.461, -51.1901, -1332.95, -67.5945, -1345.26, 352.767, -1177.11, 348.666, -1179.16, 758.776, -1119.7, 822.342, -955.652, 814.14, -898.237, 766.978, -890.035, 664.45, 617.117, 656.248, 654.026, 715.714, 717.593, 588.58, 816.02, 508.609, 1084.64, 518.862, 1070.29, 313.807, 756.554, 291.251, 635.572, 244.089, 651.976, 30.8318, 924.699, 2.12411, 1126.48, -255.776, 930.747, -519.413, 699.066, -651.231 )
 
 [node name="helper alignment sprite" type="Sprite" parent="." index="3"]
 
 visible = false
 texture = ExtResource( 3 )
+
+[connection signal="body_entered" from="." to="." method="_on_ship_body_entered"]
 
 

@@ -15,5 +15,6 @@ func _on_TrashTimer_timeout():
 	trash.set_linear_velocity(Vector2(rand_range(trash.MIN_SPEED, trash.MAX_SPEED), 0).rotated(direction))
 	$TrashTimer.start()
 
-	
-	
+func update_score(score):
+    $ScoreLabel.text = str(score)
+
