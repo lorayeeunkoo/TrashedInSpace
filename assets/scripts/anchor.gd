@@ -48,7 +48,6 @@ func _physics_process(delta):
 		torque -= 5
 	if Input.is_action_pressed('ui_right'):
 		torque += 5
-	print(small_ship.rotation)
 
 #	applied_torque = torque
 #	applied_force = force
