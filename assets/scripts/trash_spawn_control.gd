@@ -18,13 +18,14 @@ var trashThree = preload("res://TrashThree.tscn")
 var trashFour = preload("res://TrashFour.tscn")
 var trashFive = preload("res://TrashFive.tscn")
 var trashSix = preload("res://TrashSix.tscn")
+var banana = preload("")
 
 
 
 
 
 
-var trashArray = [appleSmall, trashTwo, trashThree, trashFour, trashFive, trashSix]
+var trashArray = [appleSmall, trashTwo, trashThree, trashFour, trashFive, trashSix, banana]
 
 
 func _ready():
