@@ -27,11 +27,33 @@ func _process(delta):
 			rotation = rotation + ROTATE_SPEED
 		elif Input.is_action_just_pressed("key_left"):
 			rotation = rotation - ROTATE_SPEED
+		if Input.is_action_just_pressed("ui_accept") && can_shoot:
+			var laserbeam = LASER.instance()
+			get_tree().get_root().add_child(laserbeam)
+			laserbeam.position = $"Sprite/Position2D".global_position
+			laserbeam.rotation = $"Sprite/Position2D".global_rotation
+					
+			can_shoot = false	
+			
+			get_node("AudioPlayer").play(0)
+			
+			timer.start()  
 	if ship.playerCannon == 1:
 		if Input.is_action_just_pressed("ui_right"):
 			rotation = rotation + ROTATE_SPEED
 		elif Input.is_action_just_pressed("ui_left"):
 			rotation = rotation - ROTATE_SPEED
+		if Input.is_action_just_pressed("control_a") && can_shoot:
+			var laserbeam = LASER.instance()
+			get_tree().get_root().add_child(laserbeam)
+			laserbeam.position = $"Sprite/Position2D".global_position
+			laserbeam.rotation = $"Sprite/Position2D".global_rotation
+					
+			can_shoot = false	
+			
+			get_node("AudioPlayer").play(0)
+			
+			timer.start()  
 	if rotation > PI/2: rotation = PI/2
 	if rotation < -PI/2: rotation = -PI/2
 	
