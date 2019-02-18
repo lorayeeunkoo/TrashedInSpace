@@ -5,6 +5,7 @@ var motion = Vector2()
 var player = 0
 var hide = false
 var lock = false
+var cannon = false
 var top
 var mid
 var bot
@@ -24,16 +25,21 @@ func _physics_process(delta):
 		if !lock:
 			motion.y += 10
 			if Input.is_action_pressed("key_right"):
-				motion.x += 60
+				motion.x += 100
 				motion.x = min(motion.x,400)
+				$AnimatedSprite.play("walk")
+				$AnimatedSprite.flip_h = false
 			elif Input.is_action_pressed("key_left"):
-				motion.x -= 60
+				motion.x -= 100
 				motion.x = max(motion.x,-400)
+				$AnimatedSprite.play("walk")
+				$AnimatedSprite.flip_h = true
 			elif motion.x * motion.x < .50:
-				motion.x *= .8
+				motion.x *= .65
+				
 			else:
 				motion.x = 0
-		
+				$AnimatedSprite.play("idle")
 		
 		if Input.is_action_just_pressed("ui_accept") || Input.is_action_just_pressed("key_up"):
 			if($RayCast2D.is_colliding()):
@@ -52,15 +58,19 @@ func _physics_process(delta):
 				if $RayCast2D.get_collider().name == "DockArea":
 					if ship.playerSmall == -1:
 						ship.playerSmall = player
+						$AnimatedSprite.play("idle")
 						hide = true
 						lock = true
 				if $RayCast2D.get_collider().name == "CannonArea":
-					lock = true
-#					cannon = true
-					pass
+					if ship.playerCannon == -1:
+						ship.playerCannon = player
+						$AnimatedSprite.play("idle")
+						lock = true
+						cannon = true
 				if $RayCast2D.get_collider().name == "DriveArea":
 					if ship.player == -1:
 						ship.player = player
+						$AnimatedSprite.play("idle")
 						lock = true
 					pass
 		

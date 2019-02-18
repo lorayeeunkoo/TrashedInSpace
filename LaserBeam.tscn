@@ -9,7 +9,7 @@ custom_solver_bias = 0.0
 radius = 10.0
 height = 20.0
 
-[node name="LaserBeam" type="RigidBody2D" index="0"]
+[node name="LaserBeam" type="RigidBody2D"]
 
 position = Vector2( 151.506, 19.0347 )
 rotation = 1.5708
@@ -21,7 +21,7 @@ mode = 0
 mass = 1.0
 friction = 1.0
 bounce = 0.0
-gravity_scale = 1.0
+gravity_scale = 0.0
 custom_integrator = false
 continuous_cd = 0
 contacts_reported = 0
