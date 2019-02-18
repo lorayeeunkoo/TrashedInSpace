@@ -12,7 +12,7 @@ var playerCannon
 var fuel
 
 func _ready():
-	fuel = 100
+	fuel = 10000000
 	# Called when the node is added to the scene for the first time.
 	# Initialization here
 	camera = $Camera2D
@@ -73,7 +73,21 @@ func _physics_process(delta):
 			if Input.is_action_pressed('ui_right'):
 				torque += 5
 				fuel -= 0.1
-
+		elif(player==2):
+			if Input.is_action_pressed('up'):
+				force = Vector2(500,0)
+				force = force.rotated(rotation)
+				fuel -= 0.1
+			if Input.is_action_pressed('down'):
+				force = Vector2(-500,0)
+				force = force.rotated(rotation)
+				fuel -= 0.1
+			if Input.is_action_pressed('left'):
+				torque -= 5
+				fuel -= 0.1
+			if Input.is_action_pressed('right'):
+				torque += 5
+				fuel -= 0.1
 	
 #	applied_torque = torque
 #	applied_force = force
@@ -101,9 +115,10 @@ func _process(delta):
 	var camY = 5
 	var delta_position = global_position - smallShip.global_position
 	var mag = delta_position.length()
-	var mapped = reMap(mag, 5000, 1000, 15, 5)
+	var mapped = reMap(mag, 5000, 1000, 10, 2)
 	var camZoom = Vector2(mapped, mapped)
-	camera.zoom = camZoom
+	if playerSmall != -1:
+		camera.zoom = camZoom
 	var delta_y = global_position.y - smallShip.global_position.y
 	var mapped_y = reMap(delta_y, 6000, 0, 15, 5)
 	if mapped_y < 10.5:

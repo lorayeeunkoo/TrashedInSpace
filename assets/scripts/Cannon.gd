@@ -54,6 +54,22 @@ func _process(delta):
 			get_node("AudioPlayer").play(0)
 			
 			timer.start()  
+	if ship.playerCannon == 2:
+		if Input.is_action_just_pressed("right"):
+			rotation = rotation + ROTATE_SPEED
+		elif Input.is_action_just_pressed("left"):
+			rotation = rotation - ROTATE_SPEED
+		if Input.is_action_just_pressed("action") && can_shoot:
+			var laserbeam = LASER.instance()
+			get_tree().get_root().add_child(laserbeam)
+			laserbeam.position = $"Sprite/Position2D".global_position
+			laserbeam.rotation = $"Sprite/Position2D".global_rotation
+					
+			can_shoot = false	
+			
+			get_node("AudioPlayer").play(0)
+			
+			timer.start()  
 	if rotation > PI/2: rotation = PI/2
 	if rotation < -PI/2: rotation = -PI/2
 	
