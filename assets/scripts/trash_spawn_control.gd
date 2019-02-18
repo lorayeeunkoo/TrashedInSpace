@@ -29,7 +29,6 @@ var trashArray = [appleSmall, trashTwo, trashThree, trashFour, trashFive, trashS
 
 func _ready():
 	ship = $"../ship"
-	
 
 #func _process(delta):
 #	# Called every frame. Delta is time since last frame.

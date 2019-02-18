@@ -5,6 +5,7 @@ var motion = Vector2()
 var player = 0
 var hide = false
 var lock = false
+var cannon = false
 var top
 var mid
 var bot
@@ -61,10 +62,11 @@ func _physics_process(delta):
 						hide = true
 						lock = true
 				if $RayCast2D.get_collider().name == "CannonArea":
-					lock = true
-					$AnimatedSprite.play("idle")
-#					cannon = true
-					pass
+					if ship.playerCannon == -1:
+						ship.playerCannon = player
+						$AnimatedSprite.play("idle")
+						lock = true
+						cannon = true
 				if $RayCast2D.get_collider().name == "DriveArea":
 					if ship.player == -1:
 						ship.player = player

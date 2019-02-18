@@ -3,6 +3,7 @@ extends CanvasLayer
 signal start_game
 
 func _ready():
+	$menu_music.play()
 	pass
 
 #func _process(delta):
@@ -10,13 +11,9 @@ func _ready():
 #	# Update game logic here.
 #	pass
 
-func show_game_over():
-    show_message("Game Over")
-    yield($MessageTimer, "timeout")
-    $StartButton.show()
-
 func _on_StartButton_pressed():
 	$StartButton.hide()
+	$StartButton/button_click.play()
 	get_tree().change_scene("res://root.tscn")
 
 func _on_MessageTimer_timeout():
