@@ -5,7 +5,7 @@
 [ext_resource path="res://interior.tscn" type="PackedScene" id=3]
 [ext_resource path="res://assets/scripts/TrashLoader.gd" type="Script" id=4]
 [ext_resource path="res://assets/scripts/Kill_Zone.gd" type="Script" id=5]
-[ext_resource path="res://assets/scenefiles/Cannon.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/sounds/in_game.wav" type="AudioStream" id=6]
 
 [sub_resource type="CircleShape2D" id=1]
 
@@ -188,9 +188,15 @@ shape = SubResource( 3 )
 [node name="LinkPortLoc" type="Position2D" parent="." index="6"]
 
 position = Vector2( -593.689, 1247.81 )
-[node name="Cannon" parent="." index="6" instance=ExtResource( 6 )]
 
-position = Vector2( 730, 240 )
+[node name="music" type="AudioStreamPlayer" parent="." index="7"]
+
+stream = ExtResource( 6 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
 
 [connection signal="body_entered" from="." to="." method="_on_ship_body_entered"]
 
