@@ -43,6 +43,7 @@ func _ready():
 	
 	last_link = parent
 	small_ship = SMALL_SHIP_SCENE.instance()
+	small_ship.position.y += 500
 	last_link.add_child(small_ship);
 	
 	var link = PinJoint2D.new()
@@ -64,10 +65,10 @@ func _physics_process(delta):
 				force = force.rotated(small_ship.global_rotation)
 				ship.fuel -= 0.05
 			if Input.is_action_pressed('key_left'):
-				torque -= 5
+				torque -= 115
 				ship.fuel -= 0.05
 			if Input.is_action_pressed('key_right'):
-				torque += 5
+				torque += 115
 				ship.fuel -= 0.05
 		if(ship.playerSmall==1):
 			if Input.is_action_pressed('ui_up'):
@@ -79,16 +80,16 @@ func _physics_process(delta):
 				force = force.rotated(small_ship.global_rotation)
 				ship.fuel -= 0.05
 			if Input.is_action_pressed('ui_left'):
-				torque -= 5
+				torque -= 115
 				ship.fuel -= 0.05
 			if Input.is_action_pressed('ui_right'):
-				torque += 5
+				torque += 115
 				ship.fuel -= 0.05
 #	applied_torque = torque
 #	applied_force = force
 	small_ship.apply_impulse(Vector2(0,0),force)
 	
-	small_ship.apply_impulse(Vector2(4,0),Vector2(0,torque))
-	small_ship.apply_impulse(Vector2(-4,0),Vector2(0,-torque))
+	small_ship.apply_impulse(Vector2(100,0),Vector2(0,torque))
+	small_ship.apply_impulse(Vector2(-100,0),Vector2(0,-torque))
 	
 
