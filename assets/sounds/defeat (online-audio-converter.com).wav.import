@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/defeat (online-audio-converter.com).wav-04d224580331e3b687d87518f57da709.sample"
+
+[deps]
+
+source_file="res://assets/sounds/defeat (online-audio-converter.com).wav"
+dest_files=[ "res://.import/defeat (online-audio-converter.com).wav-04d224580331e3b687d87518f57da709.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
