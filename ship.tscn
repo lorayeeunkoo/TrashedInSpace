@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://assets/scripts/ship.gd" type="Script" id=1]
 [ext_resource path="res://assets/sprites/ship base.png" type="Texture" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://assets/scripts/TrashLoader.gd" type="Script" id=4]
 [ext_resource path="res://assets/scripts/Kill_Zone.gd" type="Script" id=5]
 [ext_resource path="res://assets/sounds/in_game.wav" type="AudioStream" id=6]
+[ext_resource path="res://assets/scenefiles/Cannon.tscn" type="PackedScene" id=7]
 
 [sub_resource type="CircleShape2D" id=1]
 
@@ -197,6 +198,10 @@ pitch_scale = 1.0
 autoplay = false
 mix_target = 0
 bus = "Master"
+
+[node name="Cannon" parent="." index="8" instance=ExtResource( 7 )]
+
+position = Vector2( 817.126, 270.143 )
 
 [connection signal="body_entered" from="." to="." method="_on_ship_body_entered"]
 
