@@ -8,7 +8,7 @@ custom_solver_bias = 0.0
 radius = 75.0
 height = 25.0
 
-[node name="link" type="RigidBody2D"]
+[node name="link" type="RigidBody2D" index="0"]
 
 input_pickable = false
 collision_layer = 1
@@ -35,7 +35,7 @@ shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="." index="1"]
 
-position = Vector2( -2.54661, -1.15543 )
+position = Vector2( -2.54661, -85.1553 )
 rotation = -1.58065
 scale = Vector2( 1.34225, 1.08296 )
 texture = ExtResource( 1 )
