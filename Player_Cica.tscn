@@ -52,29 +52,39 @@ _sections_unfolded = [ "Resource" ]
 [sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
-extents = Vector2( 10, 10 )
+extents = Vector2( 305.909, 7.26167 )
 
 [node name="Cica" type="KinematicBody2D"]
 
+scale = Vector2( 0.5, 0.5 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
 collision/safe_margin = 0.08
+_sections_unfolded = [ "Transform" ]
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="." index="0"]
+[node name="RayCast2D" type="RayCast2D" parent="." index="0"]
 
-position = Vector2( 645.497, 362.338 )
-scale = Vector2( 0.671998, 0.673999 )
+enabled = true
+exclude_parent = false
+cast_to = Vector2( 0, 0 )
+collision_mask = 32768
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="." index="1"]
+
+position = Vector2( 0, -26.0002 )
+scale = Vector2( 0.433333, 0.433333 )
 frames = SubResource( 1 )
 animation = "walk"
-frame = 5
+frame = 9
 playing = true
 _sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="2"]
 
-position = Vector2( 716.477, 358.37 )
-scale = Vector2( 27.566, 35.2536 )
+position = Vector2( 64, -64 )
+scale = Vector2( 0.627637, 35.2536 )
 shape = SubResource( 2 )
+_sections_unfolded = [ "Transform" ]
 
 
