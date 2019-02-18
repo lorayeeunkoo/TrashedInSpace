@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Sub_Menu.wav-4c739660d1185f44f40ee81ae7a03b50.sample"
+
+[deps]
+
+source_file="res://assets/sounds/Sub_Menu.wav"
+dest_files=[ "res://.import/Sub_Menu.wav-4c739660d1185f44f40ee81ae7a03b50.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

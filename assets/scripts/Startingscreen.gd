@@ -3,6 +3,7 @@ extends CanvasLayer
 signal start_game
 
 func _ready():
+	$menu_music.play()
 	pass
 
 #func _process(delta):
