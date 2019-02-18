@@ -5,7 +5,7 @@
 [ext_resource path="res://assets/sprites/screw.png" type="Texture" id=3]
 [ext_resource path="res://assets/sounds/Cannon_shot1.wav" type="AudioStream" id=4]
 
-[node name="Cannon" type="Node2D" index="0"]
+[node name="Cannon" type="Node2D"]
 
 position = Vector2( 180, 186.91 )
 scale = Vector2( 0.25, 0.25 )
