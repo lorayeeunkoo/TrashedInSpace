@@ -31,9 +31,11 @@ func _ready():
 	camera.make_current()
 	camera.offset_v = 60
 	
+	var tetherLoc = $LinkPortLoc.position
+	
 	tether = TETHER_SCENE.instance()
-	tether.position.x = position.x - 150
-	tether.position.y = position.y + 800
+	tether.global_position.x = tetherLoc.x
+	tether.global_position.y = tetherLoc.y
 	add_child(tether)
 	smallShip = tether.get_child(0).small_ship
 	
@@ -119,10 +121,10 @@ func _physics_process(delta):
 				force = force.rotated(rotation)
 				fuel -= 0.1
 			if Input.is_action_pressed('ui_left'):
-				torque -= 5000
+				torque -= 5
 				fuel -= 0.1
 			if Input.is_action_pressed('ui_right'):
-				torque += 5000
+				torque += 5
 				fuel -= 0.1
 
 	

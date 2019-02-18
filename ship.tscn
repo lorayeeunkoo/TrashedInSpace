@@ -141,6 +141,8 @@ autoplay = false
 mix_target = 0
 bus = "Master"
 
+[node name="LinkPortLoc" type="Position2D" parent="." index="6"]
+
 [connection signal="body_entered" from="." to="." method="_on_ship_body_entered"]
 
 

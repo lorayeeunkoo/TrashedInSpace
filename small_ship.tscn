@@ -1,15 +1,16 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://assets/scripts/small_ship.gd" type="Script" id=1]
-[ext_resource path="res://assets/sprites/icon.png" type="Texture" id=2]
+[ext_resource path="res://assets/sprites/mini ship.png" type="Texture" id=2]
 [ext_resource path="res://magnetArea.tscn" type="PackedScene" id=3]
 
-[sub_resource type="CircleShape2D" id=1]
+[sub_resource type="CapsuleShape2D" id=1]
 
 custom_solver_bias = 0.0
-radius = 10.0
+radius = 144.011
+height = 512.411
 
-[node name="small_ship" type="RigidBody2D" index="0"]
+[node name="small_ship" type="RigidBody2D"]
 
 input_pickable = false
 collision_layer = 1
@@ -34,12 +35,15 @@ _sections_unfolded = [ "Angular", "Linear" ]
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
-scale = Vector2( 10, 10 )
+position = Vector2( -0.523511, -2.18437 )
+rotation = -1.5708
+scale = Vector2( 0.312472, 0.312471 )
 texture = ExtResource( 2 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
+position = Vector2( 20, -42 )
 shape = SubResource( 1 )
 
 [node name="MagnetForce" parent="." index="2" instance=ExtResource( 3 )]
