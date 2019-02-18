@@ -64,11 +64,15 @@ func _physics_process(delta):
 					if ship.player == -1:
 						ship.player = player
 						lock = true
-					pass
-		
-		
+	if Input.is_action_just_pressed("ui_cancel"):
+		ship.playerSmall = -1
+		ship.player = -1
+		ship.playerCannon = -1
+		hide = false
+		lock = false
+
 #		if is_on_floor():
 #			if(Input.is_action_just_pressed("ui_focus_next")):
 #				motion.y = -400
-		motion = move_and_slide(motion, UP)
+	motion = move_and_slide(motion)
 	pass
