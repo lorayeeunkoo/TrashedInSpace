@@ -14,12 +14,13 @@ _sections_unfolded = [ "Animation", "Material", "Pause", "Region", "Transform", 
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
-position = Vector2( -3842.78, -24.7301 )
+position = Vector2( 650, 100 )
 texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
 
 [node name="Position2D" type="Position2D" parent="Sprite" index="0"]
 
-position = Vector2( 4841.76, 27.2862 )
+position = Vector2( 600, -150 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="screw" type="Sprite" parent="." index="1"]

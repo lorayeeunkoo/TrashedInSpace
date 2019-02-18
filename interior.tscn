@@ -98,9 +98,9 @@ scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 10 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Player" parent="." index="10" instance=ExtResource( 11 )]
+[node name="Decker" parent="." index="1" instance=ExtResource( 2 )]
 
-position = Vector2( -249.42, -267.07 )
+position = Vector2( -505.42, -491.07 )
 
 [node name="DriveArea" type="Area2D" parent="." index="11"]
 
@@ -149,7 +149,7 @@ __meta__ = {
 scale = Vector2( 22.9069, 16.9258 )
 shape = SubResource( 1 )
 
-[node name="CannonArea" type="Area2D" parent="." index="14"]
+[node name="CannonArea" type="Area2D" parent="." index="5"]
 
 editor/display_folded = true
 position = Vector2( 565.58, 404.93 )
