@@ -1,10 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://assets/scripts/ship.gd" type="Script" id=1]
 [ext_resource path="res://assets/sprites/ship.png" type="Texture" id=2]
 [ext_resource path="res://interior.tscn" type="PackedScene" id=3]
 [ext_resource path="res://assets/sprites/icon.png" type="Texture" id=4]
-
+[ext_resource path="res://assets/sounds/in_game.wav" type="AudioStream" id=5]
 
 [node name="ship" type="RigidBody2D" index="0"]
 
@@ -131,6 +131,15 @@ rotation = -3.14159
 scale = Vector2( 11.6736, -3.36104 )
 texture = ExtResource( 4 )
 _sections_unfolded = [ "Offset", "Transform" ]
+
+[node name="music" type="AudioStreamPlayer" parent="." index="5"]
+
+stream = ExtResource( 5 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
 
 [connection signal="body_entered" from="." to="." method="_on_ship_body_entered"]
 
